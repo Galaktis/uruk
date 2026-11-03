@@ -1,0 +1,177 @@
+<section class="page-shell">
+  <div class="wrap">
+    <p class="kicker">Configuration</p>
+    <h1>The environment is the config</h1>
+    <div class="prose" style="margin-top:18px">
+      <p>
+        Uruk reads everything from <code>URUK_*</code> environment variables at startup — no committed
+        <code>.env</code>, no settings file to fork, no per-site configuration at all. Per-site state
+        lives in the database like everything else; the environment only tells the process where that
+        database is and how to behave. A process holding nothing but database credentials boots,
+        migrates, seeds this site, and serves.
+      </p>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>Claiming the first superuser</h2>
+      <p>
+        A fresh tenant has no users, so there is nobody to log in as. The one-shot bootstrap endpoint
+        solves this: <code>POST /api/bootstrap</code> with an email creates the tenant's first superuser
+        and returns a single-use set-password link. Because the link goes to whoever asks, the claim also
+        needs the tenant's <strong>claim code</strong>, derived from the secret key so that only the operator
+        can read it: <code>manage.py bootstrap</code> prints it in the server logs while the tenant is
+        unclaimed, and <code>manage.py claim_code</code> prints it on demand. Set <code>URUK_ADMIN_EMAIL</code>
+        and only that address is honoured as well. Once a superuser exists, the endpoint refuses forever — from then on, only an existing superuser
+        can create another.
+      </p>
+    </div>
+    <div class="note" style="margin-top:18px">
+      The rule is per tenant: every newly created tenant starts unclaimed, and its first superuser is
+      caught the same way on its own domain. The walkthrough lives on the
+      <a href="/quickstart">quickstart</a> page.
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>Core</h2>
+    </div>
+    <div class="env-scroll">
+      <table class="env-table">
+        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>URUK_DEBUG</td><td>False</td><td>Django debug mode. Keep it off anywhere real.</td></tr>
+          <tr><td>URUK_ENV</td><td>unknown</td><td>Free-form environment label — production, staging, a laptop.</td></tr>
+          <tr><td>URUK_SECRET_KEY</td><td><em>insecure dev key</em></td><td>Signs sessions and JWTs. Set at least 32 bytes in production.</td></tr>
+          <tr><td>URUK_ALLOWED_HOSTS</td><td>*</td><td>Comma-separated Host allowlist. Uruk routes by hostname, so the catch-all default is deliberate.</td></tr>
+          <tr><td>URUK_BEHIND_PROXY</td><td>False</td><td>HTTPS ends at a proxy (Cloudflare Tunnel, Caddy, a load balancer): trust its <code>X-Forwarded-Proto</code> and mark cookies Secure. Enable only when the proxy is the sole way in.</td></tr>
+          <tr><td>URUK_CSRF_TRUSTED_ORIGINS</td><td><em>empty</em></td><td>Extra <code>scheme://host</code> origins allowed to post forms, for proxies that rewrite the Host.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>Database</h2>
+    </div>
+    <div class="env-scroll">
+      <table class="env-table">
+        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>URUK_DB_HOST</td><td>127.0.0.1</td><td>Postgres host. One database holds every tenant, each in its own schema.</td></tr>
+          <tr><td>URUK_DB_PORT</td><td>5433</td><td>Postgres port — matches the port the bundled compose file publishes.</td></tr>
+          <tr><td>URUK_DB_NAME</td><td>uruk</td><td>Database name.</td></tr>
+          <tr><td>URUK_DB_USER</td><td>uruk</td><td>Database user.</td></tr>
+          <tr><td>URUK_DB_PASSWORD</td><td>uruk</td><td>Database password.</td></tr>
+          <tr><td>URUK_DB_POOL</td><td>True</td><td>Native psycopg3 connection pooling — no external pooler needed.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>Cache &amp; asset storage</h2>
+      <p>
+        By default one Postgres holds everything — computed pages cache in a shared table, asset bytes
+        live in rows. Two variables opt out when scale demands it.
+      </p>
+    </div>
+    <div class="env-scroll">
+      <table class="env-table">
+        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>URUK_REDIS_URL</td><td><em>unset</em></td><td>Point at Redis and the page/fragment cache moves there. Unset, it lives in Postgres.</td></tr>
+          <tr><td>URUK_STORAGE_BACKEND</td><td><em>unset</em></td><td>Where asset bytes live: unset = in the database; <code>filesystem</code> or <code>boto</code> move the bytes out (rows and hashes stay).</td></tr>
+          <tr><td>URUK_STORAGE_ROOT</td><td>—</td><td>Filesystem backend: directory for the bytes.</td></tr>
+          <tr><td>URUK_STORAGE_BUCKET</td><td>—</td><td>Boto backend: S3-compatible bucket.</td></tr>
+          <tr><td>URUK_STORAGE_PREFIX</td><td>—</td><td>Boto backend: key prefix inside the bucket.</td></tr>
+          <tr><td>URUK_STORAGE_ENDPOINT_URL</td><td>—</td><td>Boto backend: custom endpoint (MinIO, R2, …).</td></tr>
+          <tr><td>URUK_STORAGE_REGION</td><td>—</td><td>Boto backend: bucket region.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>Server</h2>
+      <p>
+        Read by <code>docker-entrypoint.sh</code>, which forwards each to Granian — the Rust HTTP
+        server Uruk ships on — as the matching <code>GRANIAN_*</code> option. The defaults
+        <em>are</em> the production configuration; set a variable only to depart from them. Any
+        other Granian option can be set directly as <code>GRANIAN_*</code>.
+      </p>
+    </div>
+    <div class="env-scroll">
+      <table class="env-table">
+        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>URUK_WORKERS</td><td>2</td><td>Worker processes. Each holds its own connection pool — keep workers × pool size under Postgres max_connections.</td></tr>
+          <tr><td>URUK_BLOCKING_THREADS</td><td>8</td><td>Request threads per worker — keep close to the connection pool's max size.</td></tr>
+          <tr><td>URUK_BACKPRESSURE</td><td>16</td><td>Maximum in-flight requests per worker.</td></tr>
+          <tr><td>URUK_RESPAWN_FAILED_WORKERS</td><td>true</td><td>A worker that crashes comes back on its own.</td></tr>
+          <tr><td>URUK_WORKERS_LIFETIME</td><td>3600</td><td>Recycle each worker after this many seconds.</td></tr>
+          <tr><td>URUK_WORKERS_MAX_RSS</td><td>512</td><td>Recycle a worker as soon as its memory exceeds this many MiB.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>Bootstrap</h2>
+    </div>
+    <div class="env-scroll">
+      <table class="env-table">
+        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>URUK_DEFAULT_TENANT_SCHEMA</td><td>default</td><td>Schema name of the catch-all tenant — the one serving this page to any unmatched hostname.</td></tr>
+          <tr><td>URUK_DEFAULT_TENANT_DOMAIN</td><td>default.localhost</td><td>Placeholder primary domain recorded for it. Routing to the default tenant is by fallback, not by matching this string.</td></tr>
+          <tr><td>URUK_DEFAULT_SITE</td><td>showcase</td><td>What the default tenant starts with: <code>showcase</code> (this website) or <code>blank</code> (one empty landing page to fill in).</td></tr>
+          <tr><td>URUK_ADMIN_EMAIL</td><td><em>empty</em></td><td>Restrict the first-superuser claim to this address, on top of the claim code. Empty = any address.</td></tr>
+          <tr><td>URUK_ADMIN_PATH</td><td>uruk</td><td>URL prefix of the Django admin and its login page. Off the well-known <code>/admin/</code>; it shadows a page with the same top-level slug.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>JWT</h2>
+    </div>
+    <div class="env-scroll">
+      <table class="env-table">
+        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>URUK_JWT_ACCESS_TTL</td><td>900</td><td>Access-token lifetime, seconds (15 minutes).</td></tr>
+          <tr><td>URUK_JWT_REFRESH_TTL</td><td>1209600</td><td>Refresh-token lifetime, seconds (14 days).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>Observability</h2>
+      <p>
+        The one family that keeps its standard names: the OpenTelemetry SDK reads
+        <code>OTEL_*</code> variables itself, so Uruk does not rename them. The rule stays the
+        same — nothing loads unless configured. Without an endpoint the SDK is never even
+        imported; with one, requests, database and cache activity are traced, and every request
+        span carries the resolved tenant schema as <code>uruk.tenant</code>.
+      </p>
+    </div>
+    <div class="env-scroll">
+      <table class="env-table">
+        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>OTEL_EXPORTER_OTLP_ENDPOINT</td><td><em>unset</em></td><td>The gate. Point at an OTLP/HTTP collector and tracing turns on; unset, telemetry costs nothing.</td></tr>
+          <tr><td>OTEL_SERVICE_NAME</td><td>uruk</td><td>Service name on exported spans.</td></tr>
+          <tr><td><em>any other OTEL_*</em></td><td>—</td><td>Headers, sampling, resource attributes — every standard OpenTelemetry SDK variable applies as-is.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>MCP</h2>
+      <p>Read by the MCP server process — the agent's stdio bridge — not by Django itself.</p>
+    </div>
+    <div class="env-scroll">
+      <table class="env-table">
+        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>URUK_MCP_TENANT</td><td>—</td><td>Tenant schema the agent works in.</td></tr>
+          <tr><td>URUK_MCP_TOKEN</td><td>—</td><td>The <code>uruk_…</code> API token it authenticates with; the agent gets exactly that user's permissions.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

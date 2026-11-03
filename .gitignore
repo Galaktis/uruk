@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+
+# uv / virtualenv
+.venv/
+uv.lock.bak
+
+# Django
+*.sqlite3
+/staticfiles/
+/media/
+local_settings.py
+
+# Agent notes that stay on this machine (deployment details)
+CLAUDE.local.md
+AGENTS.local.md
+
+# Tests / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+
+# Env
+.env
+.env.*
+!.env.prod.example
+# nightly dumps from docker-compose.prod.yml
+backups/

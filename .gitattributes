@@ -1,0 +1,5 @@
+# Normalise text files to LF in the repository, whatever the contributor's OS.
+* text=auto eol=lf
+
+# Shell scripts run inside Linux containers: never let a Windows checkout add CRLF.
+*.sh text eol=lf

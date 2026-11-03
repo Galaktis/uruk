@@ -1,0 +1,91 @@
+# `docker compose up` runs a complete Uruk: the app (built from this checkout,
+# self-provisioning on start) on http://localhost:8000, the remote MCP endpoint on
+# http://localhost:8001/mcp, plus Postgres and Redis. For
+# local development start only the backing services — `just up`, i.e.
+# `docker compose up -d postgres redis` — and run the app with `uv run`. The block
+# below is the reference for the URUK_* environment the app reads; docker-compose.prod.yml
+# is the overlay for a real single-machine deployment (README "Deploy on one machine").
+#
+# Database:   URUK_DB_HOST=127.0.0.1  URUK_DB_PORT=5433  URUK_DB_NAME=uruk
+#             URUK_DB_USER=uruk  URUK_DB_PASSWORD=uruk  URUK_DB_POOL=True
+# Core:       URUK_DEBUG=True   URUK_ENV=development  URUK_SECRET_KEY=<>=32-byte secret>
+#             URUK_ALLOWED_HOSTS=*
+#             URUK_BEHIND_PROXY=False   # True behind a TLS proxy: trust X-Forwarded-Proto, Secure cookies
+#             URUK_CSRF_TRUSTED_ORIGINS=https://example.com   # extra form-POST origins
+# Cache:      URUK_REDIS_URL=redis://127.0.0.1:6379/0   # unset -> Postgres DatabaseCache (default)
+# Storage:    URUK_STORAGE_BACKEND=<filesystem|boto>    # unset -> asset bytes in Postgres (default)
+#             URUK_STORAGE_ROOT=/var/lib/uruk/assets    # filesystem backend root
+#             URUK_STORAGE_BUCKET=<bucket>  URUK_STORAGE_PREFIX=  URUK_STORAGE_ENDPOINT_URL=  URUK_STORAGE_REGION=  # boto backend
+# Bootstrap:  URUK_DEFAULT_TENANT_SCHEMA=default        # schema of the catch-all tenant
+#             URUK_DEFAULT_TENANT_DOMAIN=default.localhost  # its placeholder primary domain
+#             URUK_DEFAULT_SITE=showcase                # showcase | blank (one empty landing page)
+#             URUK_ADMIN_EMAIL=you@example.com          # restrict first-superuser claim to this address (the claim code is always required)
+#             URUK_ADMIN_PATH=uruk                      # URL prefix of the Django admin (/uruk/)
+# JWT:        URUK_JWT_ACCESS_TTL=900            # access-token lifetime (seconds)
+#             URUK_JWT_REFRESH_TTL=1209600       # refresh-token lifetime (seconds)
+# Telemetry:  OTEL_EXPORTER_OTLP_ENDPOINT=http://collector:4318  # the gate: unset -> OTel never loads (standard OTEL_* names, not URUK_*)
+#             OTEL_SERVICE_NAME=uruk                             # any other standard OTEL_* variable applies as-is
+# MCP:        URUK_MCP_TENANT=<schema>  URUK_MCP_TOKEN=<uruk_ token>
+
+services:
+  app:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      URUK_DB_HOST: postgres
+      URUK_DB_PORT: "5432"
+      # Override in real deployments; >= 32 bytes keeps JWT signing (HS256) happy.
+      URUK_SECRET_KEY: ${URUK_SECRET_KEY:-compose-dev-secret-change-me-0123456789}
+      URUK_ENV: ${URUK_ENV:-compose}
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/')"]
+      interval: 5s
+      timeout: 3s
+      start_period: 60s
+      retries: 10
+
+  mcp:
+    # Remote MCP endpoint for hosted agents: POST http://localhost:8001/mcp with
+    # `Authorization: Bearer <uruk_ token>` (tokens: `manage.py create_api_token`).
+    build: .
+    command: ["mcp"]
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      URUK_DB_HOST: postgres
+      URUK_DB_PORT: "5432"
+      URUK_SECRET_KEY: ${URUK_SECRET_KEY:-compose-dev-secret-change-me-0123456789}
+      URUK_ENV: ${URUK_ENV:-compose}
+    ports:
+      - "8001:8001"
+
+  postgres:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: uruk
+      POSTGRES_USER: uruk
+      POSTGRES_PASSWORD: uruk
+    ports:
+      - "5433:5432"   # host 5433 to avoid clashing with other local Postgres on 5432
+    volumes:
+      # Postgres 18 images keep data in a per-version subdirectory of /var/lib/postgresql,
+      # so the volume mounts the parent.
+      - uruk-postgres-18:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U uruk"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:8
+    ports:
+      - "6379:6379"
+
+volumes:
+  uruk-postgres-18:

@@ -1,0 +1,25 @@
+.git
+.github
+.venv
+.env
+.env.*
+**/__pycache__
+.pytest_cache
+.ruff_cache
+.coverage
+htmlcov
+staticfiles
+backups
+CLAUDE.local.md
+AGENTS.local.md
+# Not needed at runtime: the tests, the docs and their screenshots, and the default
+# site's sources (the image ships the built archive, tenants/seed/default_site.json).
+tests
+docs
+scripts
+# ...but the bundled fonts' license travels with the image, which embeds the fonts.
+!scripts/default_site/fonts/OFL.txt
+justfile
+*.md
+!README.md
+docker-compose*.yml

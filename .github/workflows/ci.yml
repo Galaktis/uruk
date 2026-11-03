@@ -1,0 +1,92 @@
+# Quality gate for every push and pull request: lint + types, the Postgres-backed
+# test suite, and a fresh `docker compose up` smoke test of the shipped image.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call: # the release workflow runs the full gate before publishing
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: uv sync --frozen
+      - run: uv run ruff format --check .
+      - run: uv run ruff check --output-format github .
+      - run: uv run ty check
+
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # push the coverage badge to the `badges` branch
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: uruk
+          POSTGRES_USER: uruk
+          POSTGRES_PASSWORD: uruk
+        ports:
+          - "5433:5432"
+        options: >-
+          --health-cmd "pg_isready -U uruk"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+    env:
+      URUK_SECRET_KEY: ci-only-secret-key-0123456789abcdef
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: uv sync --frozen
+      - run: uv run coverage run -m pytest
+      # Fails the job below `fail_under` (pyproject.toml).
+      - run: uv run coverage report
+      - name: Publish the coverage badge
+        # main only: the percentage goes to the `badges` branch as a shields.io endpoint,
+        # which the README badge reads. No third-party coverage service involved.
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          pct=$(uv run coverage report --format=total)
+          color=$([ "$pct" -ge 95 ] && echo brightgreen || echo red)
+          printf '{"schemaVersion":1,"label":"coverage","message":"%s%%","color":"%s"}\n' "$pct" "$color" > "$RUNNER_TEMP/coverage.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch --depth=1 origin badges:badges; then git switch badges; else git switch --orphan badges; fi
+          cp "$RUNNER_TEMP/coverage.json" coverage.json
+          git add coverage.json
+          git diff --cached --quiet || { git commit -m "Coverage: $pct%" && git push origin badges; }
+
+  compose-smoke:
+    # The release promise: a fresh `docker compose up` serves the default site.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: docker compose up -d --build --wait app mcp
+      - name: Default site answers on a fresh database
+        run: |
+          for i in $(seq 1 30); do
+            if curl -fsS http://localhost:8000/ -o home.html; then break; fi
+            sleep 2
+          done
+          grep -q "<title>Uruk" home.html
+          curl -fsS -o /dev/null http://localhost:8000/uruk/login/
+      - name: Remote MCP endpoint refuses unauthenticated calls
+        run: |
+          for i in $(seq 1 30); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' -X POST http://localhost:8001/mcp) && [ "$code" != 000 ] && break
+            sleep 2
+          done
+          test "$code" = 401
+      - if: failure()
+        run: docker compose logs app mcp
+      - if: always()
+        run: docker compose down -v

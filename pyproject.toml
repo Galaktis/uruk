@@ -1,0 +1,127 @@
+[project]
+name = "uruk"
+version = "0.1.0"
+description = "Uruk — a multi-tenant CMS where a website is data, not code"
+authors = [{ name = "Jerome Millet" }]
+maintainers = [{ name = "Galaktis" }]
+readme = "README.md"
+license = "BSD-2-Clause"
+license-files = ["LICENSE"]
+requires-python = ">=3.15"
+keywords = ["cms", "django", "multi-tenant", "mcp", "ai-agents", "headless"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Internet :: WWW/HTTP :: Site Management",
+]
+dependencies = [
+    "django>=6.1.2,<6.2",
+    "django-tenants>=4.0.1",
+    "psycopg[binary,pool]>=3.3",
+    "django-ninja>=1.7.3",
+    "django-redis>=7.0",
+    "granian>=2.8",
+    "mcp>=2.3",
+    "pyjwt>=2.15",
+    "whitenoise>=6.12.0",
+    "opentelemetry-api>=1.45.2",
+    "opentelemetry-sdk>=1.45.2",
+    "opentelemetry-exporter-otlp-proto-http>=1.45.2",
+    "opentelemetry-instrumentation-django>=0.66b1",
+    "opentelemetry-instrumentation-psycopg>=0.66b1",
+    "opentelemetry-instrumentation-redis>=0.66b1",
+    "opentelemetry-instrumentation-logging>=0.66b1",
+]
+
+[project.urls]
+Homepage = "https://uruk.galaktis.eu"
+Repository = "https://github.com/Galaktis/uruk"
+Issues = "https://github.com/Galaktis/uruk/issues"
+Documentation = "https://github.com/Galaktis/uruk/blob/main/ARCHITECTURE.md"
+Funding = "https://github.com/sponsors/Galaktis"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17",
+    "ty>=0.0.95",
+    "pytest>=9.2",
+    "pytest-django>=4.14",
+    "factory-boy>=3.3",
+    "nplusone>=1.0",
+    "lxml>=6.1",
+    "coverage>=7.17",
+    "django-stubs>=6.1.2",
+]
+
+[tool.ruff]
+line-length = 160
+target-version = "py315"
+extend-exclude = ["**/migrations/**"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D203",   # one-blank-line-before-class (conflicts with D211)
+    "D213",   # multi-line-summary-second-line (we put the summary on the first line)
+    "D106",   # missing docstring in nested class (Django Meta classes)
+    "D105",   # missing docstring in magic method (e.g. __str__)
+    "RUF012", # mutable default for class attribute (Django Meta ordering/constraints)
+    "ERA001", # commented-out code
+    "COM812", # trailing-comma — handled by the formatter
+    "CPY001", # copyright notice — this project doesn't use per-file copyright headers
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401", "D104"]
+"tests/**" = ["S101", "D100", "D103", "PLR2004", "ARG001", "INP001"] # asserts, missing docstrings, magic values, fixture args, namespace pkg
+"scripts/**" = ["INP001"] # standalone authoring tools, not a package
+"rendering/blocks.py" = ["ARG001"] # renderers share a (element, children, ctx) signature; not all use every arg
+"caching/signals.py" = ["ARG001"] # signal receivers must accept sender/**kwargs even when unused
+"api/**" = ["TC001", "TC002", "TC003", "ARG001"] # ninja reads annotations at runtime (no TC-only imports); endpoints take `request` even when unused
+"content/views.py" = ["ARG001"] # serving views receive request/URL kwargs they don't all use
+"studio/views.py" = ["ARG001"] # views receive request/URL kwargs they don't all use
+"**/migrations/**" = ["ALL"]
+
+[tool.ruff.lint.flake8-quotes]
+docstring-quotes = "double"
+
+[tool.ruff.lint.pylint]
+max-args = 8  # service-layer functions take several keyword-only fields
+
+[tool.ruff.format]
+docstring-code-format = true
+# Don't reformat fenced code blocks in the docs (ruff ≥0.16 formats Markdown by default):
+# the ARCHITECTURE.md snippets use hand-aligned trailing comments that formatting would mangle.
+exclude = ["*.md"]
+
+[tool.ty.environment]
+python-version = "3.15"
+
+[tool.ty.src]
+# Generated code, like ruff: migrations are checked by `makemigrations`, not by hand.
+exclude = ["**/migrations/**"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+addopts = "--strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["."]
+omit = [
+    "config/asgi.py",
+    "config/wsgi.py",
+    "config/settings.py",
+    "**/migrations/**",
+    "**/__init__.py",
+    "tests/**",
+]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+skip_covered = true
+sort = "miss"

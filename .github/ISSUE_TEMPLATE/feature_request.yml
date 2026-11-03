@@ -1,0 +1,29 @@
+name: Feature request
+description: Suggest an idea or an improvement for Uruk.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and what gets in the way today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How you would like it to work. A new element kind, an MCP tool, an API endpoint, a setting...
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches or workarounds you have looked at.
+  - type: checkboxes
+    id: architecture
+    attributes:
+      label: Design fit
+      options:
+        - label: I have read [ARCHITECTURE.md](https://github.com/Galaktis/uruk/blob/main/ARCHITECTURE.md) and this fits (or I explain above why it should change).

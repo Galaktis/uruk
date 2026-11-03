@@ -1,0 +1,36 @@
+<div class="status">
+  <strong class="brand">Uruk Studio</strong>
+  {% if status.mode == "live" %}
+    <span class="badge live" title="Never published: edits are visible to visitors immediately">Live mode</span>
+  {% else %}
+    <span class="badge">Live: #{{ status.live_revision.number }}{% if status.live_revision.message %} — {{ status.live_revision.message }}{% endif %}</span>
+  {% endif %}
+  {% if status.has_unpublished_changes %}
+    <span class="badge pending">{{ change_count }} unpublished change{{ change_count|pluralize }}</span>
+  {% else %}
+    <span class="badge clean">Up to date</span>
+  {% endif %}
+  <form class="publish" hx-post="{% url 'studio:publish' %}" hx-target="#status">
+    <input name="message" placeholder="What changed?" aria-label="Publish message">
+    <button type="submit"{% if not status.has_unpublished_changes %} disabled{% endif %}>Publish</button>
+  </form>
+  {% if status.mode == "draft" and status.has_unpublished_changes %}
+    <button class="danger" hx-post="{% url 'studio:discard' %}" hx-target="#status" hx-confirm="Discard every unpublished change?">Discard draft</button>
+  {% endif %}
+  {% if revisions %}
+  <details class="history">
+    <summary>History</summary>
+    <ol>
+      {% for revision in revisions %}
+      <li>
+        <span>#{{ revision.number }} {{ revision.message|default:"(no message)" }}</span>
+        <small>{{ revision.published_at|date:"Y-m-d H:i" }}{% if revision.author %} · {{ revision.author.get_username }}{% endif %}</small>
+        {% if not forloop.first %}
+        <button hx-post="{% url 'studio:rollback' revision.pk %}" hx-target="#status" hx-confirm="Make revision #{{ revision.number }} live again?">Roll back</button>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </details>
+  {% endif %}
+</div>

@@ -1,0 +1,66 @@
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <p class="kicker">Data model</p>
+      <h2>Five tables tell the story</h2>
+      <p>Every row carries a UUIDv7 key and timestamps. Everything below lives in the tenant's own schema and travels with the site.</p>
+    </div>
+    <div class="doc-grid">
+      <article class="card">
+        <h3>Element</h3>
+        <p>A node in the composition tree: a <code>kind</code> that selects its renderer, JSON <code>parameters</code>, free <code>content</code>, and a <code>parent</code>. Reusable ones — this site's header — are included by reference wherever needed.</p>
+      </article>
+      <article class="card">
+        <h3>Page</h3>
+        <p>A node in the URL tree: <code>slug</code> under a <code>parent</code>, unique per level, plus the <code>root_element</code> it renders from. The path <code>/blog/my-post</code> is just a walk down this tree.</p>
+      </article>
+      <article class="card">
+        <h3>Asset</h3>
+        <p>CSS, JS, images, fonts — bytes in the database with a <code>sha256</code> content hash, served immutable at <code>/_assets/&lt;hash&gt;/&lt;name&gt;</code>. A change is a new hash, so caches never lie.</p>
+      </article>
+      <article class="card">
+        <h3>Setting</h3>
+        <p>Namespaced JSON configuration. This site's <code>&lt;head&gt;</code> — stylesheet link, favicon — is the <code>site.head_html</code> setting, data like everything else.</p>
+      </article>
+      <article class="card">
+        <h3>PageDependency</h3>
+        <p>The reverse index behind exact invalidation: which elements each page's cached output was built from. Written on render, consulted on every save.</p>
+      </article>
+      <article class="card">
+        <h3>Tenant · Domain</h3>
+        <p>The only shared tables, in the public schema: which schemas exist and which hostnames select them. Unmatched hosts fall back to the default tenant — this site.</p>
+      </article>
+    </div>
+
+    <div class="prose">
+      <h2>Invalidation, the hard part</h2>
+      <p>
+        Caching rendered HTML is trivial; evicting the right entries is not, because elements are
+        shared across pages. Uruk records the full dependency set at render time, then listens on
+        element save and delete signals. One edit to the header element evicts the four pages that
+        reference it and no others. Deletions survive long enough to be found because the index
+        stores bare UUIDs, not foreign keys.
+      </p>
+      <div class="note" style="margin-top:20px">
+        The renderer records dependencies <em>through</em> references: when a reusable element is
+        included on a page, editing it invalidates every page that showed it — the exactness is
+        structural, not heuristic.
+      </div>
+      <h2>Portability</h2>
+      <p>
+        Because every key is a UUIDv7, a whole site serializes to one JSON archive — elements,
+        pages, assets (bytes included), settings — and restores onto any other Uruk with ids intact
+        and zero collisions. The site you are reading is itself seeded from such an archive on
+        first boot.
+      </p>
+      <div class="code" style="margin-top:20px"><pre><code>{
+  <span class="k">"uruk_archive_version"</span>: <span class="j">1</span>,
+  <span class="k">"tenant"</span>:   { <span class="k">"name"</span>: <span class="s">"Uruk"</span> },
+  <span class="k">"elements"</span>: [ <span class="c">… every block of this site …</span> ],
+  <span class="k">"pages"</span>:    [ <span class="c">… /, /manifesto, /architecture, /quickstart …</span> ],
+  <span class="k">"assets"</span>:   [ <span class="c">… css, js, fonts, favicon — bytes and hashes …</span> ],
+  <span class="k">"settings"</span>: [ <span class="c">… site.head_html …</span> ]
+}</code></pre></div>
+    </div>
+  </div>
+</section>

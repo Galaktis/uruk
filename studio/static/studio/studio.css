@@ -1,0 +1,79 @@
+/* Uruk Studio — deliberately plain: a review tool, not a page builder. */
+:root {
+  --bg: #f6f5f1;
+  --panel: #ffffff;
+  --ink: #1d1f1e;
+  --muted: #6b6f6c;
+  --line: #dddbd3;
+  --accent: #1f6f5c;
+  --pending: #a15c00;
+  --danger: #b3261e;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141615;
+    --panel: #1c1f1e;
+    --ink: #e8e6df;
+    --muted: #9a9e9a;
+    --line: #2e3230;
+    --accent: #5cc4a6;
+    --pending: #e0a55a;
+    --danger: #f28b82;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, sans-serif; display: flex; flex-direction: column; height: 100vh; }
+h2 { margin: 0 0 .6rem; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+h2 a { text-transform: none; letter-spacing: 0; color: var(--accent); }
+ul { list-style: none; margin: 0; padding-left: .9rem; }
+.pages > ul, .tree-root { padding-left: 0; }
+button, input, textarea { font: inherit; color: inherit; }
+button { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: .3rem .7rem; cursor: pointer; }
+button[type="submit"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+button:disabled { opacity: .45; cursor: default; }
+button.danger { color: var(--danger); border-color: var(--danger); background: transparent; }
+input, textarea { width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: .4rem .5rem; }
+textarea { font-family: ui-monospace, monospace; font-size: 13px; resize: vertical; }
+label { display: block; margin-bottom: .7rem; color: var(--muted); }
+
+.status { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; padding: .6rem 1rem; background: var(--panel); border-bottom: 1px solid var(--line); }
+.brand { margin-right: .4rem; }
+.badge { padding: .15rem .55rem; border-radius: 999px; border: 1px solid var(--line); font-size: 12px; }
+.badge.pending { color: var(--pending); border-color: var(--pending); }
+.badge.clean { color: var(--accent); border-color: var(--accent); }
+.badge.live { color: var(--pending); }
+.publish { display: flex; gap: .4rem; margin-left: auto; }
+.publish input { width: 16rem; }
+.history { flex-basis: 100%; }
+.history ol { margin: .4rem 0 0; padding-left: 1.2rem; }
+.history li { display: flex; gap: .6rem; align-items: center; padding: .15rem 0; }
+.history small { color: var(--muted); }
+
+.layout { flex: 1; min-height: 0; display: grid; grid-template-columns: 14rem 20rem 22rem 1fr; gap: 1px; background: var(--line); }
+.panel { background: var(--panel); padding: 1rem; overflow: auto; }
+.pages li { padding: .15rem 0; }
+.pages a { color: var(--ink); text-decoration: none; }
+.pages a[aria-current] { color: var(--accent); font-weight: 600; }
+.pages small { color: var(--muted); margin-left: .3rem; }
+.node { border: 0; background: none; padding: .15rem .3rem; text-align: left; width: 100%; border-radius: 4px; }
+.node:hover { background: var(--bg); }
+.kind { font-family: ui-monospace, monospace; color: var(--accent); }
+.text { color: var(--muted); }
+.follow { font-size: 12px; padding: .05rem .4rem; margin-left: 1.2rem; }
+.editor small { font-family: ui-monospace, monospace; color: var(--muted); text-transform: none; letter-spacing: 0; }
+.actions { display: flex; gap: .4rem; }
+.hint { color: var(--muted); }
+.error { color: var(--danger); }
+.saved { color: var(--accent); }
+.preview { display: flex; flex-direction: column; padding: 0; }
+.preview h2 { padding: 1rem 1rem 0; }
+.preview iframe { flex: 1; width: 100%; border: 0; border-top: 1px solid var(--line); background: #fff; }
+
+@media (max-width: 1100px) {
+  body { height: auto; }
+  .layout { grid-template-columns: 1fr; }
+  .preview iframe { min-height: 70vh; }
+  .publish { margin-left: 0; }
+}

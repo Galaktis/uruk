@@ -1,0 +1,990 @@
+{
+ "uruk_archive_version": 1,
+ "tenant": {
+  "name": "Uruk"
+ },
+ "elements": [
+  {
+   "id": "019f1af9-b409-77a6-a055-6b35fd822368",
+   "kind": "container",
+   "parent_id": null,
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "tag": "header",
+    "class": "site-head"
+   },
+   "is_reusable": true
+  },
+  {
+   "id": "019f1af9-b40a-7cdc-b381-3af046aa87c8",
+   "kind": "container",
+   "parent_id": "019f1af9-b409-77a6-a055-6b35fd822368",
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "tag": "div",
+    "class": "wrap"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b40b-74b6-a356-0cbb07352725",
+   "kind": "link",
+   "parent_id": "019f1af9-b40a-7cdc-b381-3af046aa87c8",
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "href": "/",
+    "class": "brand"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b40c-7628-8f86-5589515823a7",
+   "kind": "image",
+   "parent_id": "019f1af9-b40b-74b6-a356-0cbb07352725",
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "asset_id": "019f1af9-b407-7e41-a68d-7ecaff75442a",
+    "alt": ""
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b40d-79c6-a30c-4472b4bdbad2",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b40b-74b6-a356-0cbb07352725",
+   "position": 1,
+   "content": "<span>URUK</span>",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b40e-753a-bc3c-1708d6d6204d",
+   "kind": "nav",
+   "parent_id": "019f1af9-b40a-7cdc-b381-3af046aa87c8",
+   "position": 1,
+   "content": "",
+   "parameters": {
+    "class": "site-nav"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b40f-783c-b6be-4a7151654ff8",
+   "kind": "link",
+   "parent_id": "019f1af9-b40e-753a-bc3c-1708d6d6204d",
+   "position": 0,
+   "content": "Manifesto",
+   "parameters": {
+    "href": "/manifesto"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b410-780c-baa8-f8c33ed1466f",
+   "kind": "link",
+   "parent_id": "019f1af9-b40e-753a-bc3c-1708d6d6204d",
+   "position": 1,
+   "content": "Architecture",
+   "parameters": {
+    "href": "/architecture"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b411-74b4-96f5-fada6422482e",
+   "kind": "link",
+   "parent_id": "019f1af9-b40e-753a-bc3c-1708d6d6204d",
+   "position": 2,
+   "content": "Quickstart",
+   "parameters": {
+    "href": "/quickstart"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b412-76af-9c22-e936e365f696",
+   "kind": "link",
+   "parent_id": "019f1af9-b40e-753a-bc3c-1708d6d6204d",
+   "position": 3,
+   "content": "Configuration",
+   "parameters": {
+    "href": "/configuration"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b413-7cb8-bc29-352fb9c7654b",
+   "kind": "link",
+   "parent_id": "019f1af9-b40e-753a-bc3c-1708d6d6204d",
+   "position": 4,
+   "content": "GitHub",
+   "parameters": {
+    "href": "https://github.com/Galaktis/uruk"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b414-76b2-9f69-1a211ca76e4b",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b40a-7cdc-b381-3af046aa87c8",
+   "position": 2,
+   "content": "<span class=\"head-tag\">a website is data</span>",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b415-7585-9e71-05c6a13f536b",
+   "kind": "container",
+   "parent_id": null,
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "tag": "footer",
+    "class": "site-foot"
+   },
+   "is_reusable": true
+  },
+  {
+   "id": "019f1af9-b416-7100-bc21-1e20dd48ebe2",
+   "kind": "container",
+   "parent_id": "019f1af9-b415-7585-9e71-05c6a13f536b",
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "tag": "div",
+    "class": "wrap"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b417-7d2d-a60d-c2a0fb1e5e28",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b416-7100-bc21-1e20dd48ebe2",
+   "position": 0,
+   "content": "<div class=\"foot-badge\">\n  <span class=\"j\">◆</span>\n  <span>this site is data — 83 elements · 5 pages · 7 assets, in one tenant schema, exported as a single JSON archive</span>\n</div>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b418-72e8-b678-30ec24283243",
+   "kind": "container",
+   "parent_id": "019f1af9-b416-7100-bc21-1e20dd48ebe2",
+   "position": 1,
+   "content": "",
+   "parameters": {
+    "tag": "div",
+    "class": "foot-grid"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b419-7c86-9980-2bab12a4a9a6",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b418-72e8-b678-30ec24283243",
+   "position": 0,
+   "content": "<div class=\"foot-ki\">\n  <!-- 𒆠 KI, \"place\" — outlines from Noto Sans Cuneiform (OFL) -->\n  <svg width=\"44\" height=\"44\" viewBox=\"4 5 56 54\" aria-hidden=\"true\">\n    <path fill=\"currentColor\" d=\"M32.0 56.8C38.0 51.1 53.4 36.6 58.0 34.4C55.9 33.2 54.4 31.9 52.7 30.0L52.9 30.1L53.6 29.4C48.6 23.2 38.1 10.9 36.7 7.1C35.2 9.0 33.7 10.4 31.9 11.5C30.1 10.4 28.7 9.0 27.2 7.1C25.7 10.9 15.2 23.2 10.2 29.4L11.0 30.1L11.4 29.8C9.7 31.8 8.1 33.2 6.0 34.4C10.5 36.6 25.2 50.4 31.2 56.1L32.0 56.8ZM31.9 55.2C26.8 49.0 13.2 33.5 11.6 29.5C17.4 24.1 27.1 15.3 31.9 12.5C34.6 14.1 38.7 17.3 42.8 20.9C36.7 20.5 29.3 19.4 26.7 18.3C26.9 19.4 27.0 20.6 27.0 21.7C27.0 22.9 26.9 24.1 26.7 25.1C30.0 23.8 37.8 22.7 44.1 22.1C46.6 24.3 49.0 26.4 51.0 28.3C44.1 28.0 29.7 26.8 26.7 25.6C26.9 26.6 27.0 27.8 27.0 29.0C27.0 30.2 26.9 31.4 26.7 32.4C30.4 31.0 45.2 29.8 51.9 29.2L52.3 29.5C51.8 30.7 50.3 32.9 48.2 35.5C40.7 35.0 29.3 33.9 26.7 32.9C26.9 33.9 27.0 35.1 27.0 36.3C27.0 37.5 26.9 38.7 26.7 39.7C29.7 38.6 39.7 37.6 47.1 36.9C45.7 38.8 44.0 40.8 42.4 42.8C36.3 42.3 29.3 41.2 26.7 40.1C26.9 41.2 27.0 42.4 27.0 43.5C27.0 44.8 26.9 46.0 26.7 47.0C29.6 45.8 35.5 44.9 41.1 44.3C37.6 48.4 34.1 52.5 31.9 55.2Z\"/>\n  </svg>\n  <p>\n    <span class=\"glyph-name\">𒆠 KI — \"place, earth\"</span>\n    In Uruk, five thousand years ago, writing began — not as poetry but as data:\n    tallies, ledgers, receipts pressed into clay. This CMS returns the web to that idea.\n    A website is not a codebase. It is a record — rows in a database, composed into a place.\n  </p>\n</div>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b41a-7b5e-b08c-cced5ea90e92",
+   "kind": "container",
+   "parent_id": "019f1af9-b418-72e8-b678-30ec24283243",
+   "position": 1,
+   "content": "",
+   "parameters": {
+    "tag": "div",
+    "class": "foot-col"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b41b-7a99-b71f-ae3a8545f24f",
+   "kind": "heading",
+   "parent_id": "019f1af9-b41a-7b5e-b08c-cced5ea90e92",
+   "position": 0,
+   "content": "Pages",
+   "parameters": {
+    "level": 4
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b41c-76c6-a37a-a88995f31c2f",
+   "kind": "list",
+   "parent_id": "019f1af9-b41a-7b5e-b08c-cced5ea90e92",
+   "position": 1,
+   "content": "",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b41d-7e8e-bd28-6ec21eabba8a",
+   "kind": "list_item",
+   "parent_id": "019f1af9-b41c-76c6-a37a-a88995f31c2f",
+   "position": 0,
+   "content": "",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b41e-771a-9afb-939472ea6caf",
+   "kind": "link",
+   "parent_id": "019f1af9-b41d-7e8e-bd28-6ec21eabba8a",
+   "position": 0,
+   "content": "Home",
+   "parameters": {
+    "href": "/"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b41f-774f-951c-45231810e2db",
+   "kind": "list_item",
+   "parent_id": "019f1af9-b41c-76c6-a37a-a88995f31c2f",
+   "position": 1,
+   "content": "",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b420-71d3-bcd0-2c149aceb693",
+   "kind": "link",
+   "parent_id": "019f1af9-b41f-774f-951c-45231810e2db",
+   "position": 0,
+   "content": "Manifesto",
+   "parameters": {
+    "href": "/manifesto"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b421-776a-a7d9-8a13d48057df",
+   "kind": "list_item",
+   "parent_id": "019f1af9-b41c-76c6-a37a-a88995f31c2f",
+   "position": 2,
+   "content": "",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b422-714a-a85a-80a698f48456",
+   "kind": "link",
+   "parent_id": "019f1af9-b421-776a-a7d9-8a13d48057df",
+   "position": 0,
+   "content": "Architecture",
+   "parameters": {
+    "href": "/architecture"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b423-7108-aacc-37936916fbe0",
+   "kind": "list_item",
+   "parent_id": "019f1af9-b41c-76c6-a37a-a88995f31c2f",
+   "position": 3,
+   "content": "",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b424-7e0d-9d39-eb1d0db2a75d",
+   "kind": "link",
+   "parent_id": "019f1af9-b423-7108-aacc-37936916fbe0",
+   "position": 0,
+   "content": "Quickstart",
+   "parameters": {
+    "href": "/quickstart"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b425-7a84-9f41-52d0e9226449",
+   "kind": "list_item",
+   "parent_id": "019f1af9-b41c-76c6-a37a-a88995f31c2f",
+   "position": 4,
+   "content": "",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b426-7a4e-a03c-e2d20f3e5c51",
+   "kind": "link",
+   "parent_id": "019f1af9-b425-7a84-9f41-52d0e9226449",
+   "position": 0,
+   "content": "Configuration",
+   "parameters": {
+    "href": "/configuration"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b427-7bfc-ab8d-dc577c9b1f6b",
+   "kind": "container",
+   "parent_id": "019f1af9-b418-72e8-b678-30ec24283243",
+   "position": 2,
+   "content": "",
+   "parameters": {
+    "tag": "div",
+    "class": "foot-col"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b428-7a35-8380-e33d9e136449",
+   "kind": "heading",
+   "parent_id": "019f1af9-b427-7bfc-ab8d-dc577c9b1f6b",
+   "position": 0,
+   "content": "Source",
+   "parameters": {
+    "level": 4
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b429-786f-bd2e-6fd90c495ab2",
+   "kind": "list",
+   "parent_id": "019f1af9-b427-7bfc-ab8d-dc577c9b1f6b",
+   "position": 1,
+   "content": "",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b42a-71b3-90d8-5942f25bf0d3",
+   "kind": "list_item",
+   "parent_id": "019f1af9-b429-786f-bd2e-6fd90c495ab2",
+   "position": 0,
+   "content": "",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b42b-78c8-b562-ed60d6f790ea",
+   "kind": "link",
+   "parent_id": "019f1af9-b42a-71b3-90d8-5942f25bf0d3",
+   "position": 0,
+   "content": "github.com/Galaktis/uruk",
+   "parameters": {
+    "href": "https://github.com/Galaktis/uruk"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b42c-7a6d-ac52-5f10262a89a8",
+   "kind": "list_item",
+   "parent_id": "019f1af9-b429-786f-bd2e-6fd90c495ab2",
+   "position": 1,
+   "content": "",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b42d-74d7-9afb-1ce09c78fe44",
+   "kind": "link",
+   "parent_id": "019f1af9-b42c-7a6d-ac52-5f10262a89a8",
+   "position": 0,
+   "content": "ARCHITECTURE.md",
+   "parameters": {
+    "href": "https://github.com/Galaktis/uruk/blob/main/ARCHITECTURE.md"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b42e-7522-8d9a-8a46e21206f3",
+   "kind": "list_item",
+   "parent_id": "019f1af9-b429-786f-bd2e-6fd90c495ab2",
+   "position": 2,
+   "content": "",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b42f-7874-924b-6849a243a81e",
+   "kind": "link",
+   "parent_id": "019f1af9-b42e-7522-8d9a-8a46e21206f3",
+   "position": 0,
+   "content": "README.md",
+   "parameters": {
+    "href": "https://github.com/Galaktis/uruk/blob/main/README.md"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b430-714e-8125-7b3cea99040f",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b416-7100-bc21-1e20dd48ebe2",
+   "position": 2,
+   "content": "<div class=\"foot-base\">\n  <span>URUK — a multi-tenant CMS where a website is data, not code</span>\n  <span>edit this page over MCP · no deploy required</span>\n</div>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b431-70ce-8daa-0be38e31ed28",
+   "kind": "container",
+   "parent_id": null,
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "tag": "div"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b432-7c02-aa1e-0144ef4ce641",
+   "kind": "reference",
+   "parent_id": "019f1af9-b431-70ce-8daa-0be38e31ed28",
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "element_id": "019f1af9-b409-77a6-a055-6b35fd822368"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b433-79ea-8731-25b00d932904",
+   "kind": "container",
+   "parent_id": "019f1af9-b431-70ce-8daa-0be38e31ed28",
+   "position": 1,
+   "content": "",
+   "parameters": {
+    "tag": "main"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b434-7cc2-98eb-4f69dbd15030",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b433-79ea-8731-25b00d932904",
+   "position": 0,
+   "content": "<section class=\"hero\">\n  <div class=\"wrap\">\n    <div class=\"hero-copy\">\n      <p class=\"eyebrow\" data-rise=\"1\">\n        <svg class=\"wedge\" width=\"22\" height=\"8\" viewBox=\"0 0 22 8\" fill=\"currentColor\" aria-hidden=\"true\">\n          <path d=\"M0 0 L8 4 L0 8 Z\" opacity=\"0.9\"/><path d=\"M9 0 L17 4 L9 8 Z\" opacity=\"0.45\"/><path d=\"M18 0 L22 2 22 6 18 8 Z\" opacity=\"0.2\"/>\n        </svg>\n        Uruk — a multi-tenant CMS\n      </p>\n      <h1 data-rise=\"2\">A website is<br><span class=\"grad\">data</span>, not code.</h1>\n      <p class=\"lede\" data-rise=\"3\">\n        Uruk composes entire sites from rows in Postgres — element trees rendered to HTML,\n        cached until the data changes, edited by people and AI agents over the same API.\n        No templates to commit. No build to run. No deploy to wait for.\n      </p>\n      <div class=\"hero-actions\" data-rise=\"4\">\n        <div class=\"term\" style=\"flex:1 1 340px\">\n          <div class=\"term-bar\"><span>sh — get running</span><button class=\"copy-btn\" type=\"button\" data-copy>copy</button></div>\n          <pre><code><span class=\"ps1\">$ </span><span data-cmd>git clone https://github.com/Galaktis/uruk && cd uruk</span>\n<span class=\"ps1\">$ </span><span data-cmd>docker compose up</span>\n<span class=\"out\"># http://localhost:8000 → this site, served from rows</span></code></pre>\n        </div>\n      </div>\n      <p data-rise=\"5\" style=\"margin-top:22px\"><a class=\"more-link\" href=\"/manifesto\">Why the first city of writing lends its name</a></p>\n    </div>\n\n    <figure class=\"ziggurat-fig\" data-rise=\"3\" aria-label=\"The Uruk stack drawn as a ziggurat: Postgres at the base, tenant schemas, element trees, pages, and served HTML at the summit\">\n      <svg viewBox=\"0 0 520 432\" role=\"img\" aria-hidden=\"true\">\n        <defs>\n          <radialGradient id=\"apexGlow\" cx=\"0.5\" cy=\"0.5\" r=\"0.5\">\n            <stop offset=\"0\" stop-color=\"#46e0a8\" stop-opacity=\"0.55\"/>\n            <stop offset=\"1\" stop-color=\"#46e0a8\" stop-opacity=\"0\"/>\n          </radialGradient>\n        </defs>\n\n        <ellipse class=\"apex-glow\" cx=\"260\" cy=\"70\" rx=\"120\" ry=\"54\" fill=\"url(#apexGlow)\"/>\n\n        <!-- summit: the served page -->\n        <rect x=\"228\" y=\"52\" width=\"64\" height=\"38\" rx=\"6\" fill=\"#46e0a8\" fill-opacity=\"0.16\" stroke=\"#46e0a8\" stroke-opacity=\"0.85\"/>\n        <text x=\"260\" y=\"76\" text-anchor=\"middle\" font-family=\"Martian Mono, monospace\" font-size=\"11\" letter-spacing=\"2\" fill=\"#9ff0d3\">HTML</text>\n\n        <!-- terraces, bottom of the city upward -->\n        <g>\n          <rect x=\"192\" y=\"118\" width=\"136\" height=\"56\" rx=\"6\" fill=\"#46e0a8\" fill-opacity=\"0.09\" stroke=\"#46e0a8\" stroke-opacity=\"0.5\"/>\n          <text x=\"260\" y=\"151\" text-anchor=\"middle\" font-family=\"Martian Mono, monospace\" font-size=\"11\" letter-spacing=\"2\" fill=\"#8fe4c2\">PAGES</text>\n        </g>\n        <g>\n          <rect x=\"130\" y=\"190\" width=\"260\" height=\"56\" rx=\"6\" fill=\"#46c2b8\" fill-opacity=\"0.09\" stroke=\"#46c2b8\" stroke-opacity=\"0.5\"/>\n          <text x=\"260\" y=\"223\" text-anchor=\"middle\" font-family=\"Martian Mono, monospace\" font-size=\"11\" letter-spacing=\"2\" fill=\"#8adcd2\">ELEMENT TREES</text>\n        </g>\n        <g>\n          <rect x=\"68\" y=\"262\" width=\"384\" height=\"56\" rx=\"6\" fill=\"#46a0cc\" fill-opacity=\"0.09\" stroke=\"#46a0cc\" stroke-opacity=\"0.5\"/>\n          <text x=\"260\" y=\"295\" text-anchor=\"middle\" font-family=\"Martian Mono, monospace\" font-size=\"11\" letter-spacing=\"2\" fill=\"#8cc9e4\">TENANT SCHEMAS</text>\n        </g>\n        <g>\n          <rect x=\"6\" y=\"334\" width=\"508\" height=\"56\" rx=\"6\" fill=\"#3e7bd6\" fill-opacity=\"0.1\" stroke=\"#3e7bd6\" stroke-opacity=\"0.55\"/>\n          <text x=\"260\" y=\"367\" text-anchor=\"middle\" font-family=\"Martian Mono, monospace\" font-size=\"11\" letter-spacing=\"2\" fill=\"#94bdea\">POSTGRES — ALL STATE</text>\n        </g>\n\n        <!-- clay wedges, the scribe's marks -->\n        <g fill=\"#c9a176\" opacity=\"0.4\">\n          <path d=\"M30 410 L44 416 L30 422 Z\"/>\n          <path d=\"M50 410 L64 416 L50 422 Z\" opacity=\"0.6\"/>\n          <path d=\"M70 410 L84 416 L70 422 Z\" opacity=\"0.3\"/>\n        </g>\n        <text x=\"514\" y=\"420\" text-anchor=\"end\" font-family=\"Martian Mono, monospace\" font-size=\"9\" letter-spacing=\"1.5\" fill=\"#67806f\">URUK · EST. 4000 BC</text>\n      </svg>\n      <figcaption>the stack is a ziggurat — state at the base, HTML at the summit</figcaption>\n    </figure>\n  </div>\n</section>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b435-7507-9498-4ea1537e60f7",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b433-79ea-8731-25b00d932904",
+   "position": 1,
+   "content": "<section class=\"band reveal\" id=\"how\">\n  <div class=\"wrap\">\n    <div class=\"band-head\">\n      <p class=\"kicker\">From tablet to page</p>\n      <h2>Three moves, same as 3200&nbsp;BC</h2>\n      <p>A scribe pressed records into clay; a renderer presses rows into HTML. The pipeline is short enough to hold in your head.</p>\n    </div>\n    <div class=\"steps\">\n      <article class=\"step\">\n        <span class=\"step-no\">\n          <svg width=\"10\" height=\"10\" viewBox=\"0 0 10 10\" fill=\"#c9a176\" aria-hidden=\"true\"><path d=\"M0 0 L10 5 L0 10 Z\"/></svg>\n          01 · WRITE\n        </span>\n        <h3>Rows, not files</h3>\n        <p>Every block on this page is an <code>Element</code> row — a kind, JSON parameters, content, and a parent. Pages are rows too, arranged in a URL tree.</p>\n        <div class=\"code\"><pre><code>{\n  <span class=\"k\">\"kind\"</span>: <span class=\"s\">\"heading\"</span>,\n  <span class=\"k\">\"content\"</span>: <span class=\"s\">\"A website is data\"</span>,\n  <span class=\"k\">\"parameters\"</span>: { <span class=\"k\">\"level\"</span>: <span class=\"j\">1</span> },\n  <span class=\"k\">\"parent_id\"</span>: <span class=\"s\">\"0198…root\"</span>\n}</code></pre></div>\n      </article>\n      <article class=\"step\">\n        <span class=\"step-no\">\n          <svg width=\"10\" height=\"10\" viewBox=\"0 0 10 10\" fill=\"#c9a176\" aria-hidden=\"true\"><path d=\"M0 0 L10 5 L0 10 Z\"/></svg>\n          02 · RENDER\n        </span>\n        <h3>The tree becomes HTML</h3>\n        <p>A small library of committed renderers walks the element tree. Text is escaped by default; there are no per-site templates anywhere.</p>\n        <div class=\"code\"><pre><code><span class=\"c\"># the only committed \"template\"</span>\n<span class=\"k\">@register</span>(<span class=\"s\">\"heading\"</span>)\n<span class=\"k\">def</span> <span class=\"j\">heading</span>(el, children, ctx):\n    <span class=\"k\">return</span> format_html(\n        <span class=\"s\">\"&lt;h{0}&gt;{1}&lt;/h{0}&gt;\"</span>,\n        el.parameters[<span class=\"s\">\"level\"</span>], el.content)</code></pre></div>\n      </article>\n      <article class=\"step\">\n        <span class=\"step-no\">\n          <svg width=\"10\" height=\"10\" viewBox=\"0 0 10 10\" fill=\"#c9a176\" aria-hidden=\"true\"><path d=\"M0 0 L10 5 L0 10 Z\"/></svg>\n          03 · CACHE\n        </span>\n        <h3>Cached until a row changes</h3>\n        <p>Each render records which elements it touched. Saving one element evicts exactly the pages that used it — a shared header invalidates everywhere at once.</p>\n        <div class=\"code\"><pre><code>element.save()\n<span class=\"c\">└─ PageDependency reverse index</span>\n<span class=\"c\">   └─ evict: /  /manifesto  …</span>\n<span class=\"j\">✓</span> next request re-renders once</code></pre></div>\n      </article>\n    </div>\n  </div>\n</section>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b436-72c9-bb9f-c2e4d12965e0",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b433-79ea-8731-25b00d932904",
+   "position": 2,
+   "content": "<section class=\"band reveal\" id=\"features\">\n  <div class=\"wrap\">\n    <div class=\"band-head\">\n      <p class=\"kicker\">What the city provides</p>\n      <h2>One deployment, many sites</h2>\n      <p>A single Uruk serves any number of tenants. Each one is a walled district: its own schema, its own users, its own everything.</p>\n    </div>\n    <div class=\"cards\">\n      <article class=\"card\">\n        <svg class=\"icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3 21 8 12 13 3 8 Z\"/><path d=\"M3 12.5 12 17.5 21 12.5\" opacity=\"0.6\"/><path d=\"M3 17 12 22 21 17\" opacity=\"0.3\"/></svg>\n        <h3>A schema per tenant</h3>\n        <p>The <code>Host</code> header picks the tenant; the connection's <code>search_path</code> does the isolation. Users, content, and tokens never share tables across sites.</p>\n      </article>\n      <article class=\"card\">\n        <svg class=\"icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"5\" cy=\"12\" r=\"2.2\"/><circle cx=\"19\" cy=\"5\" r=\"2.2\"/><circle cx=\"19\" cy=\"19\" r=\"2.2\"/><path d=\"M7 11 16.8 5.9 M7 13 16.8 18.1\"/></svg>\n        <h3>Exact invalidation</h3>\n        <p>The hard problem, solved with a dependency graph: every render records what it read, so one edit evicts precisely the affected pages — nothing more, nothing stale.</p>\n      </article>\n      <article class=\"card\">\n        <svg class=\"icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 6 8 10 4 14\"/><path d=\"M10 15 H20\"/><rect x=\"2\" y=\"2\" width=\"20\" height=\"20\" rx=\"3\" opacity=\"0.4\"/></svg>\n        <h3>Agents are editors</h3>\n        <p>The first admin client is an MCP server, not a dashboard. An agent authenticates as a tenant user and can do exactly what that user's permissions allow.</p>\n      </article>\n      <article class=\"card\">\n        <svg class=\"icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3 20 7.5 V16.5 L12 21 4 16.5 V7.5 Z\" opacity=\"0.5\"/><path d=\"M12 11 V21 M12 11 20 7.5 M12 11 4 7.5\"/></svg>\n        <h3>Sites that travel</h3>\n        <p>Every row has a UUIDv7 key, so a whole site exports as one JSON archive and restores anywhere without collisions. This very site ships as one.</p>\n      </article>\n      <article class=\"card\">\n        <svg class=\"icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><ellipse cx=\"12\" cy=\"5.5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5.5 V18.5 C4 20.2 7.6 21.5 12 21.5 S20 20.2 20 18.5 V5.5\" opacity=\"0.6\"/><path d=\"M4 12 C4 13.7 7.6 15 12 15 S20 13.7 20 12\" opacity=\"0.4\"/></svg>\n        <h3>Assets live in the DB</h3>\n        <p>The CSS styling this page is a row, served at a content-hashed URL with an immutable year-long cache. Even the fonts are rows. Few files, full speed.</p>\n      </article>\n      <article class=\"card\">\n        <svg class=\"icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"7\" cy=\"5\" r=\"2.2\" opacity=\"0.6\"/><circle cx=\"7\" cy=\"19\" r=\"2.2\" opacity=\"0.6\"/><path d=\"M7 7.2 V16.8 M7 12 H14.5\" opacity=\"0.6\"/><circle cx=\"17\" cy=\"12\" r=\"2.2\" opacity=\"0.6\"/><path d=\"M20.5 3.5 3.5 20.5\"/></svg>\n        <h3>No commit-to-create</h3>\n        <p>A new site is an API call, not a repository. The only committed code is the generic renderer library every tenant shares — everything else is rows.</p>\n      </article>\n    </div>\n  </div>\n</section>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b437-7432-9031-43866345fb58",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b433-79ea-8731-25b00d932904",
+   "position": 3,
+   "content": "<section class=\"band reveal\" id=\"quickstart\">\n  <div class=\"wrap\">\n    <div class=\"quick\">\n      <div>\n        <p class=\"kicker\">Founding a city</p>\n        <h2>Running in one command</h2>\n        <p>\n          Docker is the only requirement. On first start the app container\n          migrates every schema and raises the default tenant — the site you are reading now —\n          next to a remote MCP endpoint. Then hand an agent a token, let it build, review the\n          draft in the Studio, and publish.\n        </p>\n        <a class=\"more-link\" href=\"/quickstart\">The full quickstart, including MCP setup</a>\n      </div>\n      <div class=\"term\">\n        <div class=\"term-bar\"><span>sh — from zero to served</span><button class=\"copy-btn\" type=\"button\" data-copy>copy</button></div>\n        <pre><code><span class=\"ps1\">$ </span><span data-cmd>git clone https://github.com/Galaktis/uruk && cd uruk</span>\n<span class=\"ps1\">$ </span><span data-cmd>docker compose up -d</span>\n<span class=\"out\">app   migrating public + tenant schemas, seeding the default site…</span>\n<span class=\"out\">app   Listening at: http://0.0.0.0:8000</span>\n<span class=\"out\">mcp   Listening at: http://0.0.0.0:8001  (/mcp)</span>\n<span class=\"out\"># any hostname you point at it now serves this site</span></code></pre>\n      </div>\n    </div>\n  </div>\n</section>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b438-7452-8336-0bf97642de62",
+   "kind": "reference",
+   "parent_id": "019f1af9-b431-70ce-8daa-0be38e31ed28",
+   "position": 2,
+   "content": "",
+   "parameters": {
+    "element_id": "019f1af9-b415-7585-9e71-05c6a13f536b"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b43a-7783-a57b-337e91cda817",
+   "kind": "container",
+   "parent_id": null,
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "tag": "div"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b43b-78b1-a21c-c8f309f2fe20",
+   "kind": "reference",
+   "parent_id": "019f1af9-b43a-7783-a57b-337e91cda817",
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "element_id": "019f1af9-b409-77a6-a055-6b35fd822368"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b43c-7ba3-afd2-c64d4ba2e0b9",
+   "kind": "container",
+   "parent_id": "019f1af9-b43a-7783-a57b-337e91cda817",
+   "position": 1,
+   "content": "",
+   "parameters": {
+    "tag": "main",
+    "class": "wrap page-shell"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "kind": "container",
+   "parent_id": "019f1af9-b43c-7ba3-afd2-c64d4ba2e0b9",
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "tag": "article",
+    "class": "prose prose-center"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b43e-7786-a5fc-4804b7d854f5",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 0,
+   "content": "<p class=\"kicker\">Manifesto</p>",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b43f-7d06-b6d2-64ff604b1a8e",
+   "kind": "heading",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 1,
+   "content": "Writing began as data",
+   "parameters": {
+    "level": 1
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b440-7074-85cc-644bd50242ef",
+   "kind": "text",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 2,
+   "content": "Around 3200 BC, in a Mesopotamian city called Uruk, someone pressed the first written signs into wet clay. They were not poems. They were records: heads of cattle, jars of beer, measures of grain — data, structured and stored so a city could function. The earliest human being whose name we know, Kushim, was not a king or a priest. He was an accountant signing grain ledgers.",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b441-7e34-99ee-dd96bbc4a4b9",
+   "kind": "text",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 3,
+   "content": "Writing was invented as a database. Literature came two centuries later, almost as a side effect.",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b442-7d3a-831b-ff994d07a5bd",
+   "kind": "heading",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 4,
+   "content": "The web went the other way",
+   "parameters": {
+    "level": 2
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b443-7343-9685-f29c766ec986",
+   "kind": "text",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 5,
+   "content": "The web began as documents and grew into codebases. Today a marketing site with four pages routinely owns a repository, a dependency tree, a build pipeline, and a deploy queue. Changing a sentence means a commit, a review, a build, and a wait. The content — the thing the site exists for — is buried inside artifacts of software engineering that have nothing to say about it.",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b444-7708-8ece-2b497e223d88",
+   "kind": "heading",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 6,
+   "content": "A site is a record, not a build",
+   "parameters": {
+    "level": 2
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b445-7d6b-ac6e-aee5068de5bc",
+   "kind": "text",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 7,
+   "content": "Uruk stores a website the way Uruk stored grain: as rows. Pages form a URL tree; elements form composition trees; assets and settings are rows beside them. The only committed code is a small library of generic renderers shared by every site. Editing is a write. Serving is a read. Creating a whole new site is an API call that finishes before a CI pipeline would have started.",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b446-7312-9ae8-55d54c450a72",
+   "kind": "heading",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 8,
+   "content": "Agents are scribes",
+   "parameters": {
+    "level": 2
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b447-7498-b234-fcf95d093328",
+   "kind": "text",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 9,
+   "content": "Structured records want a structured editor. Uruk's first admin client is not a dashboard but an MCP server: an AI agent authenticates as a tenant user and edits the site with exactly that user's permissions — no parallel authorization model, no special agent backdoor. The scribe changed; the ledger did not.",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b448-7af9-ad98-cfa5e0cb6e73",
+   "kind": "heading",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 10,
+   "content": "State belongs in the database",
+   "parameters": {
+    "level": 2
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b449-7546-a2be-b94c90204cbe",
+   "kind": "text",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 11,
+   "content": "One Postgres holds everything: content, users, permissions, assets, settings, even this manifesto. Backup is a database dump. Portability is a JSON archive keyed by UUIDv7 — a whole site restores anywhere, ids intact. There is no state smeared across a filesystem, an object store, and a git history.",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b44a-7feb-a530-b2c5ee15a324",
+   "kind": "heading",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 12,
+   "content": "The name",
+   "parameters": {
+    "level": 2
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b44b-736b-a4b8-6b8b3e58bc41",
+   "kind": "text",
+   "parent_id": "019f1af9-b43d-7800-b0f6-9e23fbe4628e",
+   "position": 13,
+   "content": "𒀕𒆠 — Uruk. The city where writing, and with it recorded data, began. The sign 𒆠 (KI) marks a place. Five thousand years on, this project makes a modest claim in the same spirit: every place on the web is, underneath everything, a record. Uruk just refuses to pretend otherwise.",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b44c-75e9-9a04-cb7b12bc1b49",
+   "kind": "reference",
+   "parent_id": "019f1af9-b43a-7783-a57b-337e91cda817",
+   "position": 2,
+   "content": "",
+   "parameters": {
+    "element_id": "019f1af9-b415-7585-9e71-05c6a13f536b"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b44e-74e0-82bb-23591a531639",
+   "kind": "container",
+   "parent_id": null,
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "tag": "div"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b44f-7ce1-903b-a90619be02a3",
+   "kind": "reference",
+   "parent_id": "019f1af9-b44e-74e0-82bb-23591a531639",
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "element_id": "019f1af9-b409-77a6-a055-6b35fd822368"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b450-7bca-ae5f-fca490d3b76c",
+   "kind": "container",
+   "parent_id": "019f1af9-b44e-74e0-82bb-23591a531639",
+   "position": 1,
+   "content": "",
+   "parameters": {
+    "tag": "main"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b451-78ac-b277-8942325a1d26",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b450-7bca-ae5f-fca490d3b76c",
+   "position": 0,
+   "content": "<section class=\"page-shell\">\n  <div class=\"wrap\">\n    <p class=\"kicker\">Architecture</p>\n    <h1>How a request becomes a page</h1>\n    <div class=\"prose\" style=\"margin-top:18px\">\n      <p>\n        One deployment, one Postgres, many sites. Tenant routing runs first on every request:\n        the <strong>Host header</strong> resolves to a Domain row, the connection's\n        <strong>search_path</strong> switches to that tenant's schema, and from that moment every\n        query — pages, elements, users, assets — can only see one site's world.\n      </p>\n    </div>\n    <div class=\"flow\" role=\"img\" aria-label=\"Request flow: Host header to Domain to tenant schema to page to element tree to cached HTML\">\n      <svg viewBox=\"0 0 920 130\">\n        <defs>\n          <marker id=\"arr\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\">\n            <path d=\"M0 0 L10 5 L0 10 Z\" fill=\"#67806f\"/>\n          </marker>\n        </defs>\n        <g font-family=\"Martian Mono, monospace\" text-anchor=\"middle\">\n          <rect x=\"8\" y=\"34\" width=\"128\" height=\"44\" rx=\"8\" fill=\"#3e7bd6\" fill-opacity=\"0.1\" stroke=\"#3e7bd6\" stroke-opacity=\"0.6\"/>\n          <text x=\"72\" y=\"60\" font-size=\"11\" letter-spacing=\"1\" fill=\"#94bdea\">REQUEST</text>\n          <text x=\"72\" y=\"102\" font-size=\"9\" fill=\"#67806f\">Host: any.site</text>\n\n          <line x1=\"140\" y1=\"56\" x2=\"164\" y2=\"56\" stroke=\"#67806f\" marker-end=\"url(#arr)\"/>\n          <rect x=\"168\" y=\"34\" width=\"128\" height=\"44\" rx=\"8\" fill=\"#46a0cc\" fill-opacity=\"0.1\" stroke=\"#46a0cc\" stroke-opacity=\"0.6\"/>\n          <text x=\"232\" y=\"60\" font-size=\"11\" letter-spacing=\"1\" fill=\"#8cc9e4\">DOMAIN</text>\n          <text x=\"232\" y=\"102\" font-size=\"9\" fill=\"#67806f\">public schema</text>\n\n          <line x1=\"300\" y1=\"56\" x2=\"324\" y2=\"56\" stroke=\"#67806f\" marker-end=\"url(#arr)\"/>\n          <rect x=\"328\" y=\"34\" width=\"128\" height=\"44\" rx=\"8\" fill=\"#46c2b8\" fill-opacity=\"0.1\" stroke=\"#46c2b8\" stroke-opacity=\"0.6\"/>\n          <text x=\"392\" y=\"60\" font-size=\"11\" letter-spacing=\"1\" fill=\"#8adcd2\">TENANT</text>\n          <text x=\"392\" y=\"102\" font-size=\"9\" fill=\"#67806f\">search_path = site</text>\n\n          <line x1=\"460\" y1=\"56\" x2=\"484\" y2=\"56\" stroke=\"#67806f\" marker-end=\"url(#arr)\"/>\n          <rect x=\"488\" y=\"34\" width=\"128\" height=\"44\" rx=\"8\" fill=\"#46e0a8\" fill-opacity=\"0.08\" stroke=\"#46e0a8\" stroke-opacity=\"0.5\"/>\n          <text x=\"552\" y=\"60\" font-size=\"11\" letter-spacing=\"1\" fill=\"#8fe4c2\">PAGE</text>\n          <text x=\"552\" y=\"102\" font-size=\"9\" fill=\"#67806f\">slug tree → row</text>\n\n          <line x1=\"620\" y1=\"56\" x2=\"644\" y2=\"56\" stroke=\"#67806f\" marker-end=\"url(#arr)\"/>\n          <rect x=\"648\" y=\"34\" width=\"128\" height=\"44\" rx=\"8\" fill=\"#46e0a8\" fill-opacity=\"0.12\" stroke=\"#46e0a8\" stroke-opacity=\"0.65\"/>\n          <text x=\"712\" y=\"60\" font-size=\"11\" letter-spacing=\"1\" fill=\"#9ff0d3\">ELEMENTS</text>\n          <text x=\"712\" y=\"102\" font-size=\"9\" fill=\"#67806f\">tree → renderers</text>\n\n          <line x1=\"780\" y1=\"56\" x2=\"804\" y2=\"56\" stroke=\"#67806f\" marker-end=\"url(#arr)\"/>\n          <rect x=\"808\" y=\"34\" width=\"104\" height=\"44\" rx=\"8\" fill=\"#46e0a8\" fill-opacity=\"0.18\" stroke=\"#46e0a8\"/>\n          <text x=\"860\" y=\"60\" font-size=\"11\" letter-spacing=\"1\" fill=\"#bdf5e0\">HTML</text>\n          <text x=\"860\" y=\"102\" font-size=\"9\" fill=\"#67806f\">computed cache</text>\n        </g>\n      </svg>\n    </div>\n    <div class=\"prose\">\n      <p>\n        The two right-hand stages almost never run. Computed HTML is cached per page, and a\n        dependency graph keeps that cache honest — which is the part of a CMS that is usually\n        wrong, and the part Uruk treats as the core of the design.\n      </p>\n    </div>\n  </div>\n</section>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b452-7d04-b0b4-efdbecfa9266",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b450-7bca-ae5f-fca490d3b76c",
+   "position": 1,
+   "content": "<section class=\"band\">\n  <div class=\"wrap\">\n    <div class=\"band-head\">\n      <p class=\"kicker\">Data model</p>\n      <h2>Five tables tell the story</h2>\n      <p>Every row carries a UUIDv7 key and timestamps. Everything below lives in the tenant's own schema and travels with the site.</p>\n    </div>\n    <div class=\"doc-grid\">\n      <article class=\"card\">\n        <h3>Element</h3>\n        <p>A node in the composition tree: a <code>kind</code> that selects its renderer, JSON <code>parameters</code>, free <code>content</code>, and a <code>parent</code>. Reusable ones — this site's header — are included by reference wherever needed.</p>\n      </article>\n      <article class=\"card\">\n        <h3>Page</h3>\n        <p>A node in the URL tree: <code>slug</code> under a <code>parent</code>, unique per level, plus the <code>root_element</code> it renders from. The path <code>/blog/my-post</code> is just a walk down this tree.</p>\n      </article>\n      <article class=\"card\">\n        <h3>Asset</h3>\n        <p>CSS, JS, images, fonts — bytes in the database with a <code>sha256</code> content hash, served immutable at <code>/_assets/&lt;hash&gt;/&lt;name&gt;</code>. A change is a new hash, so caches never lie.</p>\n      </article>\n      <article class=\"card\">\n        <h3>Setting</h3>\n        <p>Namespaced JSON configuration. This site's <code>&lt;head&gt;</code> — stylesheet link, favicon — is the <code>site.head_html</code> setting, data like everything else.</p>\n      </article>\n      <article class=\"card\">\n        <h3>PageDependency</h3>\n        <p>The reverse index behind exact invalidation: which elements each page's cached output was built from. Written on render, consulted on every save.</p>\n      </article>\n      <article class=\"card\">\n        <h3>Tenant · Domain</h3>\n        <p>The only shared tables, in the public schema: which schemas exist and which hostnames select them. Unmatched hosts fall back to the default tenant — this site.</p>\n      </article>\n    </div>\n\n    <div class=\"prose\">\n      <h2>Invalidation, the hard part</h2>\n      <p>\n        Caching rendered HTML is trivial; evicting the right entries is not, because elements are\n        shared across pages. Uruk records the full dependency set at render time, then listens on\n        element save and delete signals. One edit to the header element evicts the four pages that\n        reference it and no others. Deletions survive long enough to be found because the index\n        stores bare UUIDs, not foreign keys.\n      </p>\n      <div class=\"note\" style=\"margin-top:20px\">\n        The renderer records dependencies <em>through</em> references: when a reusable element is\n        included on a page, editing it invalidates every page that showed it — the exactness is\n        structural, not heuristic.\n      </div>\n      <h2>Portability</h2>\n      <p>\n        Because every key is a UUIDv7, a whole site serializes to one JSON archive — elements,\n        pages, assets (bytes included), settings — and restores onto any other Uruk with ids intact\n        and zero collisions. The site you are reading is itself seeded from such an archive on\n        first boot.\n      </p>\n      <div class=\"code\" style=\"margin-top:20px\"><pre><code>{\n  <span class=\"k\">\"uruk_archive_version\"</span>: <span class=\"j\">1</span>,\n  <span class=\"k\">\"tenant\"</span>:   { <span class=\"k\">\"name\"</span>: <span class=\"s\">\"Uruk\"</span> },\n  <span class=\"k\">\"elements\"</span>: [ <span class=\"c\">… every block of this site …</span> ],\n  <span class=\"k\">\"pages\"</span>:    [ <span class=\"c\">… /, /manifesto, /architecture, /quickstart …</span> ],\n  <span class=\"k\">\"assets\"</span>:   [ <span class=\"c\">… css, js, fonts, favicon — bytes and hashes …</span> ],\n  <span class=\"k\">\"settings\"</span>: [ <span class=\"c\">… site.head_html …</span> ]\n}</code></pre></div>\n    </div>\n  </div>\n</section>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b453-7f8f-bec4-20d0cea41705",
+   "kind": "reference",
+   "parent_id": "019f1af9-b44e-74e0-82bb-23591a531639",
+   "position": 2,
+   "content": "",
+   "parameters": {
+    "element_id": "019f1af9-b415-7585-9e71-05c6a13f536b"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b455-7b30-adef-cb62659b48d9",
+   "kind": "container",
+   "parent_id": null,
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "tag": "div"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b456-7efa-abd1-7a9b45eacfaa",
+   "kind": "reference",
+   "parent_id": "019f1af9-b455-7b30-adef-cb62659b48d9",
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "element_id": "019f1af9-b409-77a6-a055-6b35fd822368"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b457-717c-9843-cfdf1b00946d",
+   "kind": "container",
+   "parent_id": "019f1af9-b455-7b30-adef-cb62659b48d9",
+   "position": 1,
+   "content": "",
+   "parameters": {
+    "tag": "main"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b458-78ab-9dc3-465dc38b0c30",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b457-717c-9843-cfdf1b00946d",
+   "position": 0,
+   "content": "<section class=\"page-shell\">\n  <div class=\"wrap\">\n    <p class=\"kicker\">Quickstart</p>\n    <h1>From zero to a served site</h1>\n    <div class=\"prose\" style=\"margin-top:18px\">\n      <p>\n        You need <strong>Docker</strong> (for Postgres and Redis), <strong>Python 3.15</strong> and\n        <strong>uv</strong>. Nothing else — no Node, no bundler, no template directory.\n      </p>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>1 · Raise the city</h2>\n      <p>On first start, migrations run for the public schema and every tenant schema; the default tenant is created, seeded with this site, and published. The website answers on port 8000, the remote MCP endpoint on 8001.</p>\n    </div>\n    <div class=\"term\" style=\"margin-top:18px\">\n      <div class=\"term-bar\"><span>sh</span><button class=\"copy-btn\" type=\"button\" data-copy>copy</button></div>\n      <pre><code><span class=\"ps1\">$ </span><span data-cmd>git clone https://github.com/Galaktis/uruk && cd uruk</span>\n<span class=\"ps1\">$ </span><span data-cmd>docker compose up -d</span>\n<span class=\"out\"># http://localhost:8000 — any hostname serves the default tenant</span>\n<span class=\"out\"># http://localhost:8001/mcp — the remote MCP endpoint</span></code></pre>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>2 · Claim the throne</h2>\n      <p>\n        No credentials live in the startup path. The tenant's first superuser is claimed over the API\n        with a <strong>claim code</strong> that only the server's operator can read (it is printed in the\n        app's logs while the tenant is unclaimed). <code>URUK_ADMIN_EMAIL</code> restricts the claim to\n        one address; once claimed, the endpoint refuses forever. Then sign in at <code>/uruk/</code>.\n        Details on the <a href=\"/configuration\">configuration</a> page.\n      </p>\n    </div>\n    <div class=\"term\" style=\"margin-top:18px\">\n      <div class=\"term-bar\"><span>sh</span><button class=\"copy-btn\" type=\"button\" data-copy>copy</button></div>\n      <pre><code><span class=\"ps1\">$ </span><span data-cmd>docker compose exec app uv run python manage.py claim_code</span>\n<span class=\"out\">3f9c…  # the default tenant's claim code</span>\n<span class=\"ps1\">$ </span><span data-cmd>curl -X POST http://localhost:8000/api/bootstrap -H \"Content-Type: application/json\" -d \"{\\\"email\\\": \\\"you@example.com\\\", \\\"code\\\": \\\"&lt;claim code&gt;\\\"}\"</span>\n<span class=\"out\">{\"set_password_url\": \"/api/set-password?uid=…&token=…\"}  # one-shot; a second claim is refused</span></code></pre>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>3 · Hand a scribe the stylus</h2>\n      <p>Issue an API token for a tenant user (the claimed superuser's username is its email), then point an MCP client at the remote endpoint. The agent can do exactly what that user's permissions allow — create pages, move elements, upload assets, publish.</p>\n    </div>\n    <div class=\"term\" style=\"margin-top:18px\">\n      <div class=\"term-bar\"><span>sh</span><button class=\"copy-btn\" type=\"button\" data-copy>copy</button></div>\n      <pre><code><span class=\"ps1\">$ </span><span data-cmd>docker compose exec app uv run python manage.py create_api_token default you@example.com</span>\n<span class=\"out\">uruk_…  # shown once — store it</span></code></pre>\n    </div>\n    <div class=\"code\" style=\"margin-top:18px\"><pre><code><span class=\"c\">// in an MCP client config (Claude Code, etc.)</span>\n{\n  <span class=\"k\">\"mcpServers\"</span>: {\n    <span class=\"k\">\"uruk\"</span>: {\n      <span class=\"k\">\"type\"</span>: <span class=\"s\">\"http\"</span>,\n      <span class=\"k\">\"url\"</span>: <span class=\"s\">\"http://localhost:8001/mcp\"</span>,\n      <span class=\"k\">\"headers\"</span>: { <span class=\"k\">\"Authorization\"</span>: <span class=\"s\">\"Bearer uruk_…\"</span> }\n    }\n  }\n}</code></pre></div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>4 · Review, then publish</h2>\n      <p>Every edit is an ordinary write to the site's draft. Visitors keep the published revision while editors watch the draft at <code>/_preview/</code> — or sign in at <code>/admin/</code> and open the <a href=\"/_studio/\">Studio</a> to review the agent's work, fix it, and publish. Every publish is kept: roll back to any revision, or discard the draft.</p>\n    </div>\n    <div class=\"note\" style=\"margin-top:18px\">\n      This page — the one explaining the system — is itself rows in the default tenant.\n      Ask your agent to reword this paragraph and publish, refresh, and it's done. No commit, no build, no deploy.\n    </div>\n  </div>\n</section>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b459-7b46-b9e9-5e42b1ff19bb",
+   "kind": "reference",
+   "parent_id": "019f1af9-b455-7b30-adef-cb62659b48d9",
+   "position": 2,
+   "content": "",
+   "parameters": {
+    "element_id": "019f1af9-b415-7585-9e71-05c6a13f536b"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b45b-7a47-b57c-75fc1a9f8e63",
+   "kind": "container",
+   "parent_id": null,
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "tag": "div"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b45c-7a6a-9538-39a60916da02",
+   "kind": "reference",
+   "parent_id": "019f1af9-b45b-7a47-b57c-75fc1a9f8e63",
+   "position": 0,
+   "content": "",
+   "parameters": {
+    "element_id": "019f1af9-b409-77a6-a055-6b35fd822368"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b45d-7f63-bcf4-e8717664230d",
+   "kind": "container",
+   "parent_id": "019f1af9-b45b-7a47-b57c-75fc1a9f8e63",
+   "position": 1,
+   "content": "",
+   "parameters": {
+    "tag": "main"
+   },
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b45e-79b9-b2c9-cd56cfc5c1eb",
+   "kind": "raw_html",
+   "parent_id": "019f1af9-b45d-7f63-bcf4-e8717664230d",
+   "position": 0,
+   "content": "<section class=\"page-shell\">\n  <div class=\"wrap\">\n    <p class=\"kicker\">Configuration</p>\n    <h1>The environment is the config</h1>\n    <div class=\"prose\" style=\"margin-top:18px\">\n      <p>\n        Uruk reads everything from <code>URUK_*</code> environment variables at startup — no committed\n        <code>.env</code>, no settings file to fork, no per-site configuration at all. Per-site state\n        lives in the database like everything else; the environment only tells the process where that\n        database is and how to behave. A process holding nothing but database credentials boots,\n        migrates, seeds this site, and serves.\n      </p>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>Claiming the first superuser</h2>\n      <p>\n        A fresh tenant has no users, so there is nobody to log in as. The one-shot bootstrap endpoint\n        solves this: <code>POST /api/bootstrap</code> with an email creates the tenant's first superuser\n        and returns a single-use set-password link. Because the link goes to whoever asks, the claim also\n        needs the tenant's <strong>claim code</strong>, derived from the secret key so that only the operator\n        can read it: <code>manage.py bootstrap</code> prints it in the server logs while the tenant is\n        unclaimed, and <code>manage.py claim_code</code> prints it on demand. Set <code>URUK_ADMIN_EMAIL</code>\n        and only that address is honoured as well. Once a superuser exists, the endpoint refuses forever — from then on, only an existing superuser\n        can create another.\n      </p>\n    </div>\n    <div class=\"note\" style=\"margin-top:18px\">\n      The rule is per tenant: every newly created tenant starts unclaimed, and its first superuser is\n      caught the same way on its own domain. The walkthrough lives on the\n      <a href=\"/quickstart\">quickstart</a> page.\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>Core</h2>\n    </div>\n    <div class=\"env-scroll\">\n      <table class=\"env-table\">\n        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>\n        <tbody>\n          <tr><td>URUK_DEBUG</td><td>False</td><td>Django debug mode. Keep it off anywhere real.</td></tr>\n          <tr><td>URUK_ENV</td><td>unknown</td><td>Free-form environment label — production, staging, a laptop.</td></tr>\n          <tr><td>URUK_SECRET_KEY</td><td><em>insecure dev key</em></td><td>Signs sessions and JWTs. Set at least 32 bytes in production.</td></tr>\n          <tr><td>URUK_ALLOWED_HOSTS</td><td>*</td><td>Comma-separated Host allowlist. Uruk routes by hostname, so the catch-all default is deliberate.</td></tr>\n          <tr><td>URUK_BEHIND_PROXY</td><td>False</td><td>HTTPS ends at a proxy (Cloudflare Tunnel, Caddy, a load balancer): trust its <code>X-Forwarded-Proto</code> and mark cookies Secure. Enable only when the proxy is the sole way in.</td></tr>\n          <tr><td>URUK_CSRF_TRUSTED_ORIGINS</td><td><em>empty</em></td><td>Extra <code>scheme://host</code> origins allowed to post forms, for proxies that rewrite the Host.</td></tr>\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>Database</h2>\n    </div>\n    <div class=\"env-scroll\">\n      <table class=\"env-table\">\n        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>\n        <tbody>\n          <tr><td>URUK_DB_HOST</td><td>127.0.0.1</td><td>Postgres host. One database holds every tenant, each in its own schema.</td></tr>\n          <tr><td>URUK_DB_PORT</td><td>5433</td><td>Postgres port — matches the port the bundled compose file publishes.</td></tr>\n          <tr><td>URUK_DB_NAME</td><td>uruk</td><td>Database name.</td></tr>\n          <tr><td>URUK_DB_USER</td><td>uruk</td><td>Database user.</td></tr>\n          <tr><td>URUK_DB_PASSWORD</td><td>uruk</td><td>Database password.</td></tr>\n          <tr><td>URUK_DB_POOL</td><td>True</td><td>Native psycopg3 connection pooling — no external pooler needed.</td></tr>\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>Cache &amp; asset storage</h2>\n      <p>\n        By default one Postgres holds everything — computed pages cache in a shared table, asset bytes\n        live in rows. Two variables opt out when scale demands it.\n      </p>\n    </div>\n    <div class=\"env-scroll\">\n      <table class=\"env-table\">\n        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>\n        <tbody>\n          <tr><td>URUK_REDIS_URL</td><td><em>unset</em></td><td>Point at Redis and the page/fragment cache moves there. Unset, it lives in Postgres.</td></tr>\n          <tr><td>URUK_STORAGE_BACKEND</td><td><em>unset</em></td><td>Where asset bytes live: unset = in the database; <code>filesystem</code> or <code>boto</code> move the bytes out (rows and hashes stay).</td></tr>\n          <tr><td>URUK_STORAGE_ROOT</td><td>—</td><td>Filesystem backend: directory for the bytes.</td></tr>\n          <tr><td>URUK_STORAGE_BUCKET</td><td>—</td><td>Boto backend: S3-compatible bucket.</td></tr>\n          <tr><td>URUK_STORAGE_PREFIX</td><td>—</td><td>Boto backend: key prefix inside the bucket.</td></tr>\n          <tr><td>URUK_STORAGE_ENDPOINT_URL</td><td>—</td><td>Boto backend: custom endpoint (MinIO, R2, …).</td></tr>\n          <tr><td>URUK_STORAGE_REGION</td><td>—</td><td>Boto backend: bucket region.</td></tr>\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>Server</h2>\n      <p>\n        Read by <code>docker-entrypoint.sh</code>, which forwards each to Granian — the Rust HTTP\n        server Uruk ships on — as the matching <code>GRANIAN_*</code> option. The defaults\n        <em>are</em> the production configuration; set a variable only to depart from them. Any\n        other Granian option can be set directly as <code>GRANIAN_*</code>.\n      </p>\n    </div>\n    <div class=\"env-scroll\">\n      <table class=\"env-table\">\n        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>\n        <tbody>\n          <tr><td>URUK_WORKERS</td><td>2</td><td>Worker processes. Each holds its own connection pool — keep workers × pool size under Postgres max_connections.</td></tr>\n          <tr><td>URUK_BLOCKING_THREADS</td><td>8</td><td>Request threads per worker — keep close to the connection pool's max size.</td></tr>\n          <tr><td>URUK_BACKPRESSURE</td><td>16</td><td>Maximum in-flight requests per worker.</td></tr>\n          <tr><td>URUK_RESPAWN_FAILED_WORKERS</td><td>true</td><td>A worker that crashes comes back on its own.</td></tr>\n          <tr><td>URUK_WORKERS_LIFETIME</td><td>3600</td><td>Recycle each worker after this many seconds.</td></tr>\n          <tr><td>URUK_WORKERS_MAX_RSS</td><td>512</td><td>Recycle a worker as soon as its memory exceeds this many MiB.</td></tr>\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>Bootstrap</h2>\n    </div>\n    <div class=\"env-scroll\">\n      <table class=\"env-table\">\n        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>\n        <tbody>\n          <tr><td>URUK_DEFAULT_TENANT_SCHEMA</td><td>default</td><td>Schema name of the catch-all tenant — the one serving this page to any unmatched hostname.</td></tr>\n          <tr><td>URUK_DEFAULT_TENANT_DOMAIN</td><td>default.localhost</td><td>Placeholder primary domain recorded for it. Routing to the default tenant is by fallback, not by matching this string.</td></tr>\n          <tr><td>URUK_DEFAULT_SITE</td><td>showcase</td><td>What the default tenant starts with: <code>showcase</code> (this website) or <code>blank</code> (one empty landing page to fill in).</td></tr>\n          <tr><td>URUK_ADMIN_EMAIL</td><td><em>empty</em></td><td>Restrict the first-superuser claim to this address, on top of the claim code. Empty = any address.</td></tr>\n          <tr><td>URUK_ADMIN_PATH</td><td>uruk</td><td>URL prefix of the Django admin and its login page. Off the well-known <code>/admin/</code>; it shadows a page with the same top-level slug.</td></tr>\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>JWT</h2>\n    </div>\n    <div class=\"env-scroll\">\n      <table class=\"env-table\">\n        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>\n        <tbody>\n          <tr><td>URUK_JWT_ACCESS_TTL</td><td>900</td><td>Access-token lifetime, seconds (15 minutes).</td></tr>\n          <tr><td>URUK_JWT_REFRESH_TTL</td><td>1209600</td><td>Refresh-token lifetime, seconds (14 days).</td></tr>\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>Observability</h2>\n      <p>\n        The one family that keeps its standard names: the OpenTelemetry SDK reads\n        <code>OTEL_*</code> variables itself, so Uruk does not rename them. The rule stays the\n        same — nothing loads unless configured. Without an endpoint the SDK is never even\n        imported; with one, requests, database and cache activity are traced, and every request\n        span carries the resolved tenant schema as <code>uruk.tenant</code>.\n      </p>\n    </div>\n    <div class=\"env-scroll\">\n      <table class=\"env-table\">\n        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>\n        <tbody>\n          <tr><td>OTEL_EXPORTER_OTLP_ENDPOINT</td><td><em>unset</em></td><td>The gate. Point at an OTLP/HTTP collector and tracing turns on; unset, telemetry costs nothing.</td></tr>\n          <tr><td>OTEL_SERVICE_NAME</td><td>uruk</td><td>Service name on exported spans.</td></tr>\n          <tr><td><em>any other OTEL_*</em></td><td>—</td><td>Headers, sampling, resource attributes — every standard OpenTelemetry SDK variable applies as-is.</td></tr>\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"prose\" style=\"max-width:none\">\n      <h2>MCP</h2>\n      <p>Read by the MCP server process — the agent's stdio bridge — not by Django itself.</p>\n    </div>\n    <div class=\"env-scroll\">\n      <table class=\"env-table\">\n        <thead><tr><th>Variable</th><th>Default</th><th>Purpose</th></tr></thead>\n        <tbody>\n          <tr><td>URUK_MCP_TENANT</td><td>—</td><td>Tenant schema the agent works in.</td></tr>\n          <tr><td>URUK_MCP_TOKEN</td><td>—</td><td>The <code>uruk_…</code> API token it authenticates with; the agent gets exactly that user's permissions.</td></tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n</section>\n",
+   "parameters": {},
+   "is_reusable": false
+  },
+  {
+   "id": "019f1af9-b45f-706f-8a65-42180abf28e4",
+   "kind": "reference",
+   "parent_id": "019f1af9-b45b-7a47-b57c-75fc1a9f8e63",
+   "position": 2,
+   "content": "",
+   "parameters": {
+    "element_id": "019f1af9-b415-7585-9e71-05c6a13f536b"
+   },
+   "is_reusable": false
+  }
+ ],
+ "pages": [
+  {
+   "id": "019f1af9-b439-7e65-a8c1-ca6a291813e7",
+   "slug": "index",
+   "name": "Uruk — a website is data, not code",
+   "parent_id": null,
+   "position": 0,
+   "root_element_id": "019f1af9-b431-70ce-8daa-0be38e31ed28",
+   "parameters": {
+    "lang": "en",
+    "head_html": "<meta name=\"description\" content=\"Uruk is a multi-tenant CMS where a website is data, not code — element trees rendered, cached, and edited by agents over MCP.\">"
+   }
+  },
+  {
+   "id": "019f1af9-b44d-7065-8189-650b2b11f14f",
+   "slug": "manifesto",
+   "name": "Manifesto — Uruk",
+   "parent_id": null,
+   "position": 1,
+   "root_element_id": "019f1af9-b43a-7783-a57b-337e91cda817",
+   "parameters": {
+    "lang": "en",
+    "head_html": "<meta name=\"description\" content=\"Why Uruk exists: writing began as data in the first city; the web turned pages into codebases. Uruk turns them back into records.\">"
+   }
+  },
+  {
+   "id": "019f1af9-b454-70b7-bf8b-aa3b6dc5a8f4",
+   "slug": "architecture",
+   "name": "Architecture — Uruk",
+   "parent_id": null,
+   "position": 2,
+   "root_element_id": "019f1af9-b44e-74e0-82bb-23591a531639",
+   "parameters": {
+    "lang": "en",
+    "head_html": "<meta name=\"description\" content=\"How a request becomes a page: tenant routing by Host header, element-tree rendering, dependency-graph caching, portable JSON archives.\">"
+   }
+  },
+  {
+   "id": "019f1af9-b45a-7cfb-90d8-5c95bcaf1ba2",
+   "slug": "quickstart",
+   "name": "Quickstart — Uruk",
+   "parent_id": null,
+   "position": 3,
+   "root_element_id": "019f1af9-b455-7b30-adef-cb62659b48d9",
+   "parameters": {
+    "lang": "en",
+    "head_html": "<meta name=\"description\" content=\"Run Uruk locally in three commands, claim the first superuser over the API, and connect an AI agent over MCP.\">"
+   }
+  },
+  {
+   "id": "019f1af9-b460-7805-b8a2-fb8cc8cb19b6",
+   "slug": "configuration",
+   "name": "Configuration — Uruk",
+   "parent_id": null,
+   "position": 4,
+   "root_element_id": "019f1af9-b45b-7a47-b57c-75fc1a9f8e63",
+   "parameters": {
+    "lang": "en",
+    "head_html": "<meta name=\"description\" content=\"Every URUK_* environment variable — database, cache, storage, bootstrap, JWT, MCP — and how a tenant's first superuser is claimed.\">"
+   }
+  }
+ ],
+ "assets": [
+  {
+   "id": "019f1af9-b401-73dc-9ab1-afa4aac641d6",
+   "name": "martian-mono-var.woff2",
+   "content_type": "font/woff2",
+   "sha256": "d0be3a78a854bcea53a9dc26b6620ba322eaa515ccbd92bb4b6ec20a3c91b291",
+   "data_base64": "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"
+  },
+  {
+   "id": "019f1af9-b402-7a97-b465-9d0b483fed5e",
+   "name": "gudea-400.woff2",
+   "content_type": "font/woff2",
+   "sha256": "6db83475c4b6e3bcd2df60ca7afcedabc5140c3b55c9a6bb0ca636c5b6438e5f",
+   "data_base64": "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"
+  },
+  {
+   "id": "019f1af9-b403-7f0c-a75d-38b239171091",
+   "name": "gudea-700.woff2",
+   "content_type": "font/woff2",
+   "sha256": "e0037277509761be84d1c44b520649c2363df89e00568561ebf015cb3cedc91a",
+   "data_base64": "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"
+  },
+  {
+   "id": "019f1af9-b404-71c5-a52b-a8c43562f755",
+   "name": "site.css",
+   "content_type": "text/css",
+   "sha256": "29e1d5c967f32c4b3fd582f5ccc1e8436355ded474082ac26fa649a18c0d632c",
+   "data_base64": "LyogVXJ1ayBkZWZhdWx0IHNpdGUg4oCUICJjbGF5IHRhYmxldCBtZWV0cyB0ZXJtaW5hbCIuCiAgIFBhbGV0dGU6IGdyZWVuLWNhc3QgYmxhY2tzLCBqYWRl4oaSbGFwaXMgYWNjZW50cywgYSB3aGlzcGVyIG9mIGNsYXkuCiAgIFR5cGU6IE1hcnRpYW4gTW9ubyAoaW5zY3JpcHRpb25zLCBjb2RlKSArIEd1ZGVhIChwcm9zZSDigJQgbmFtZWQgZm9yIHRoZSBTdW1lcmlhbiBydWxlcikuCiAgIEZvbnRzIGFyZSBEQiBhc3NldHM7IHt7YXNzZXQ6Kn19IHBsYWNlaG9sZGVycyBhcmUgcmVzb2x2ZWQgYXQgYXJjaGl2ZSBidWlsZCB0aW1lLiAqLwoKQGZvbnQtZmFjZSB7CiAgZm9udC1mYW1pbHk6ICJNYXJ0aWFuIE1vbm8iOwogIHNyYzogdXJsKCIvX2Fzc2V0cy9kMGJlM2E3OGE4NTRiY2VhNTNhOWRjMjZiNjYyMGJhMzIyZWFhNTE1Y2NiZDkyYmI0YjZlYzIwYTNjOTFiMjkxL21hcnRpYW4tbW9uby12YXIud29mZjIiKSBmb3JtYXQoIndvZmYyIik7CiAgZm9udC13ZWlnaHQ6IDEwMCA4MDA7CiAgZm9udC1kaXNwbGF5OiBzd2FwOwp9CkBmb250LWZhY2UgewogIGZvbnQtZmFtaWx5OiAiR3VkZWEiOwogIHNyYzogdXJsKCIvX2Fzc2V0cy82ZGI4MzQ3NWM0YjZlM2JjZDJkZjYwY2E3YWZjZWRhYmM1MTQwYzNiNTVjOWE2YmIwY2E2MzZjNWI2NDM4ZTVmL2d1ZGVhLTQwMC53b2ZmMiIpIGZvcm1hdCgid29mZjIiKTsKICBmb250LXdlaWdodDogNDAwOwogIGZvbnQtZGlzcGxheTogc3dhcDsKfQpAZm9udC1mYWNlIHsKICBmb250LWZhbWlseTogIkd1ZGVhIjsKICBzcmM6IHVybCgiL19hc3NldHMvZTAwMzcyNzc1MDk3NjFiZTg0ZDFjNDRiNTIwNjQ5YzIzNjNkZjg5ZTAwNTY4NTYxZWJmMDE1Y2IzY2VkYzkxYS9ndWRlYS03MDAud29mZjIiKSBmb3JtYXQoIndvZmYyIik7CiAgZm9udC13ZWlnaHQ6IDcwMDsKICBmb250LWRpc3BsYXk6IHN3YXA7Cn0KCjpyb290IHsKICAtLXZvaWQ6ICMwYTEwMGU7CiAgLS1waXQ6ICMwNjBiMDk7CiAgLS1iYXNhbHQ6ICMwZjE5MTU7CiAgLS1iYXNhbHQtMjogIzEzMjExYTsKICAtLWxpbmU6ICMxYzJhMjQ7CiAgLS1saW5lLWxpdDogcmdiYSg3MCwgMjI0LCAxNjgsIDAuMjIpOwogIC0taW5rOiAjZWFmNGVlOwogIC0tc2lsdDogIzlhYjNhNjsKICAtLWZhaW50OiAjNjc4MDZmOwogIC0tamFkZTogIzQ2ZTBhODsKICAtLWphZGUtZGVlcDogIzJhYjE4MzsKICAtLWxhcGlzOiAjNGU5ZGUwOwogIC0tbGFwaXMtZGVlcDogIzNlN2JkNjsKICAtLWNsYXk6ICNjOWExNzY7CiAgLS1ncmFkOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCB2YXIoLS1qYWRlKSwgdmFyKC0tbGFwaXMpKTsKICAtLW1vbm86ICJNYXJ0aWFuIE1vbm8iLCB1aS1tb25vc3BhY2UsICJDYXNjYWRpYSBDb2RlIiwgQ29uc29sYXMsIG1vbm9zcGFjZTsKICAvKiB0aGUgaGlzdG9yaWMgZmFjZXMgb25seSBjb3ZlciBjdW5laWZvcm0gKPCShqApIOKAlCBoYXJtbGVzcyBsYXRlIGZhbGxiYWNrcyBlbHNld2hlcmUgKi8KICAtLWJvZHk6ICJHdWRlYSIsIHN5c3RlbS11aSwgIlNlZ29lIFVJIiwgIlNlZ29lIFVJIEhpc3RvcmljIiwgIk5vdG8gU2FucyBDdW5laWZvcm0iLCBzYW5zLXNlcmlmOwogIC0td3JhcDogMTE2MHB4Owp9CgoqIHsgYm94LXNpemluZzogYm9yZGVyLWJveDsgbWFyZ2luOiAwOyBwYWRkaW5nOiAwOyB9CgpodG1sIHsgc2Nyb2xsLWJlaGF2aW9yOiBzbW9vdGg7IH0KaHRtbCwgYm9keSB7IG92ZXJmbG93LXg6IGNsaXA7IH0KCmJvZHkgewogIGJhY2tncm91bmQ6IHZhcigtLXZvaWQpOwogIGNvbG9yOiB2YXIoLS1pbmspOwogIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5KTsKICBmb250LXNpemU6IDE3cHg7CiAgbGluZS1oZWlnaHQ6IDEuNzsKICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDsKICBiYWNrZ3JvdW5kLWltYWdlOgogICAgcmFkaWFsLWdyYWRpZW50KDExMDBweCA1MjBweCBhdCAxOCUgLTglLCByZ2JhKDcwLCAyMjQsIDE2OCwgMC4wNyksIHRyYW5zcGFyZW50IDYwJSksCiAgICByYWRpYWwtZ3JhZGllbnQoOTAwcHggNDgwcHggYXQgODglIDQlLCByZ2JhKDc4LCAxNTcsIDIyNCwgMC4wNiksIHRyYW5zcGFyZW50IDYwJSk7CiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDsKfQoKOjpzZWxlY3Rpb24geyBiYWNrZ3JvdW5kOiByZ2JhKDcwLCAyMjQsIDE2OCwgMC4yOCk7IH0KCmEgeyBjb2xvcjogdmFyKC0tamFkZSk7IHRleHQtZGVjb3JhdGlvbjogbm9uZTsgfQphOmhvdmVyIHsgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7IHRleHQtdW5kZXJsaW5lLW9mZnNldDogM3B4OyB9Cgo6Zm9jdXMtdmlzaWJsZSB7IG91dGxpbmU6IDJweCBzb2xpZCB2YXIoLS1qYWRlKTsgb3V0bGluZS1vZmZzZXQ6IDNweDsgYm9yZGVyLXJhZGl1czogMnB4OyB9Cgoud3JhcCB7IG1heC13aWR0aDogdmFyKC0td3JhcCk7IG1hcmdpbi1pbmxpbmU6IGF1dG87IHBhZGRpbmctaW5saW5lOiAyNHB4OyB9CgovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIGhlYWRlciAqLwouc2l0ZS1oZWFkIHsKICBwb3NpdGlvbjogc3RpY2t5OyB0b3A6IDA7IHotaW5kZXg6IDUwOwogIGJhY2tncm91bmQ6IHJnYmEoMTAsIDE2LCAxNCwgMC44Mik7CiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDEycHgpOwogIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCB2YXIoLS1saW5lKTsKfQouc2l0ZS1oZWFkIC53cmFwIHsKICBkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDI4cHg7CiAgaGVpZ2h0OiA2NHB4Owp9Ci5icmFuZCB7CiAgZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiAxMXB4OwogIGZvbnQtZmFtaWx5OiB2YXIoLS1tb25vKTsgZm9udC13ZWlnaHQ6IDgwMDsgZm9udC1zaXplOiAxcmVtOwogIGxldHRlci1zcGFjaW5nOiAwLjIyZW07IGNvbG9yOiB2YXIoLS1pbmspOwp9Ci5icmFuZDpob3ZlciB7IHRleHQtZGVjb3JhdGlvbjogbm9uZTsgfQouYnJhbmQgaW1nIHsgZGlzcGxheTogYmxvY2s7IHdpZHRoOiAyNnB4OyBoZWlnaHQ6IDI2cHg7IH0KLnNpdGUtbmF2IHsgZGlzcGxheTogZmxleDsgZ2FwOiA0cHg7IG1hcmdpbi1sZWZ0OiBhdXRvOyB9Ci5zaXRlLW5hdiBhIHsKICBmb250LWZhbWlseTogdmFyKC0tbW9ubyk7IGZvbnQtc2l6ZTogMC43MnJlbTsgbGV0dGVyLXNwYWNpbmc6IDAuMTRlbTsKICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBjb2xvcjogdmFyKC0tc2lsdCk7CiAgcGFkZGluZzogOHB4IDEycHg7IGJvcmRlci1yYWRpdXM6IDZweDsKfQouc2l0ZS1uYXYgYTpob3ZlciB7IGNvbG9yOiB2YXIoLS1pbmspOyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGJhY2tncm91bmQ6IHZhcigtLWJhc2FsdCk7IH0KLnNpdGUtbmF2IGFbYXJpYS1jdXJyZW50PSJwYWdlIl0geyBjb2xvcjogdmFyKC0tamFkZSk7IH0KLmhlYWQtdGFnIHsKICBmb250LWZhbWlseTogdmFyKC0tbW9ubyk7IGZvbnQtc2l6ZTogMC42NnJlbTsgbGV0dGVyLXNwYWNpbmc6IDAuMWVtOwogIGNvbG9yOiB2YXIoLS1mYWludCk7IGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpbmUpOyBib3JkZXItcmFkaXVzOiA5OXB4OwogIHBhZGRpbmc6IDRweCAxMHB4OyB3aGl0ZS1zcGFjZTogbm93cmFwOwp9CkBtZWRpYSAobWF4LXdpZHRoOiA3MjBweCkgewogIC5zaXRlLWhlYWQgLndyYXAgeyBmbGV4LXdyYXA6IHdyYXA7IGhlaWdodDogYXV0bzsgcGFkZGluZy1ibG9jazogMTBweDsgcm93LWdhcDogMDsgY29sdW1uLWdhcDogMTJweDsgfQogIC5oZWFkLXRhZyB7IGRpc3BsYXk6IG5vbmU7IH0KICAuc2l0ZS1uYXYgeyBtYXJnaW4tbGVmdDogMDsgd2lkdGg6IDEwMCU7IGZsZXgtd3JhcDogd3JhcDsgfQogIC5zaXRlLW5hdiBhIHsgcGFkZGluZzogNnB4IDhweCA4cHggMDsgZm9udC1zaXplOiAwLjY0cmVtOyBsZXR0ZXItc3BhY2luZzogMC4wOGVtOyB9Cn0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBoZXJvICovCi5oZXJvIHsgcGFkZGluZy1ibG9jazogY2xhbXAoNjRweCwgMTB2aCwgMTI4cHgpIGNsYW1wKDU2cHgsIDh2aCwgOTZweCk7IH0KLmhlcm8gLndyYXAgewogIGRpc3BsYXk6IGdyaWQ7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogbWlubWF4KDAsIDdmcikgbWlubWF4KDAsIDVmcik7CiAgZ2FwOiBjbGFtcCgzMnB4LCA1dncsIDcycHgpOyBhbGlnbi1pdGVtczogY2VudGVyOwp9Ci8qIGxldCBncmlkL2ZsZXggY2hpbGRyZW4gc2hyaW5rIGJlbG93IHRoZWlyIGNvbnRlbnQncyBpbnRyaW5zaWMgd2lkdGggKGxvbmcgY29kZSBsaW5lcykgKi8KLmhlcm8gLndyYXAgPiAqLCAucXVpY2sgPiAqLCAuaGVyby1hY3Rpb25zID4gKiB7IG1pbi13aWR0aDogMDsgfQouZXllYnJvdyB7CiAgZm9udC1mYW1pbHk6IHZhcigtLW1vbm8pOyBmb250LXNpemU6IDAuNzJyZW07IGZvbnQtd2VpZ2h0OiA0MDA7CiAgbGV0dGVyLXNwYWNpbmc6IDAuM2VtOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBjb2xvcjogdmFyKC0tamFkZSk7CiAgZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiAxMnB4Owp9Ci5leWVicm93IC53ZWRnZSB7IGZsZXg6IG5vbmU7IH0KaDEgewogIGZvbnQtZmFtaWx5OiB2YXIoLS1tb25vKTsgZm9udC13ZWlnaHQ6IDgwMDsKICBmb250LXNpemU6IGNsYW1wKDEuN3JlbSwgNC42dncsIDMuNnJlbSk7CiAgbGluZS1oZWlnaHQ6IDEuMDY7IGxldHRlci1zcGFjaW5nOiAtMC4wMmVtOwogIG1hcmdpbi1ibG9jazogMjJweCAyMHB4Owp9CmgxIC5ncmFkIHsKICBiYWNrZ3JvdW5kOiB2YXIoLS1ncmFkKTsKICAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7Cn0KLmhlcm8gcC5sZWRlIHsgY29sb3I6IHZhcigtLXNpbHQpOyBmb250LXNpemU6IDEuMTJyZW07IG1heC13aWR0aDogNTRjaDsgfQouaGVyby1hY3Rpb25zIHsgZGlzcGxheTogZmxleDsgZmxleC13cmFwOiB3cmFwOyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDE4cHg7IG1hcmdpbi10b3A6IDM0cHg7IH0KLm1vcmUtbGluayB7IGZvbnQtZmFtaWx5OiB2YXIoLS1tb25vKTsgZm9udC1zaXplOiAwLjhyZW07IGxldHRlci1zcGFjaW5nOiAwLjA2ZW07IH0KLm1vcmUtbGluazo6YWZ0ZXIgeyBjb250ZW50OiAiIOKGkiI7IGNvbG9yOiB2YXIoLS1sYXBpcyk7IH0KCi56aWdndXJhdC1maWcgeyBtYXJnaW46IDA7IH0KLnppZ2d1cmF0LWZpZyBzdmcgeyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgfQouemlnZ3VyYXQtZmlnIGZpZ2NhcHRpb24gewogIG1hcmdpbi10b3A6IDE0cHg7IHRleHQtYWxpZ246IGNlbnRlcjsKICBmb250LWZhbWlseTogdmFyKC0tbW9ubyk7IGZvbnQtc2l6ZTogMC42OHJlbTsgbGV0dGVyLXNwYWNpbmc6IDAuMTJlbTsKICBjb2xvcjogdmFyKC0tZmFpbnQpOwp9CkBtZWRpYSAobWF4LXdpZHRoOiA5NjBweCkgewogIC5oZXJvIC53cmFwIHsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAxZnI7IH0KICAuemlnZ3VyYXQtZmlnIHsgbWF4LXdpZHRoOiA0NDBweDsgbWFyZ2luLWlubGluZTogYXV0bzsgfQp9CkBrZXlmcmFtZXMgYnJlYXRoZSB7IDAlLCAxMDAlIHsgb3BhY2l0eTogMC41NTsgfSA1MCUgeyBvcGFjaXR5OiAxOyB9IH0KLmFwZXgtZ2xvdyB7IGFuaW1hdGlvbjogYnJlYXRoZSA2cyBlYXNlLWluLW91dCBpbmZpbml0ZTsgfQoKLyogcGFnZS1sb2FkIHJpc2UgZm9yIGhlcm8gY2hpbGRyZW4gKi8KQGtleWZyYW1lcyByaXNlIHsgZnJvbSB7IG9wYWNpdHk6IDA7IHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxNnB4KTsgfSB0byB7IG9wYWNpdHk6IDE7IHRyYW5zZm9ybTogbm9uZTsgfSB9CltkYXRhLXJpc2VdIHsgYW5pbWF0aW9uOiByaXNlIDAuN3MgY3ViaWMtYmV6aWVyKDAuMiwgMC43LCAwLjIsIDEpIGJvdGg7IH0KW2RhdGEtcmlzZT0iMiJdIHsgYW5pbWF0aW9uLWRlbGF5OiAwLjA4czsgfQpbZGF0YS1yaXNlPSIzIl0geyBhbmltYXRpb24tZGVsYXk6IDAuMTZzOyB9CltkYXRhLXJpc2U9IjQiXSB7IGFuaW1hdGlvbi1kZWxheTogMC4yNHM7IH0KW2RhdGEtcmlzZT0iNSJdIHsgYW5pbWF0aW9uLWRlbGF5OiAwLjMyczsgfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gdGVybWluYWwgKi8KLnRlcm0gewogIGJhY2tncm91bmQ6IHZhcigtLXBpdCk7IGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpbmUpOyBib3JkZXItcmFkaXVzOiAxMHB4OwogIGZvbnQtZmFtaWx5OiB2YXIoLS1tb25vKTsgZm9udC1zaXplOiAwLjg0cmVtOyBsaW5lLWhlaWdodDogMS43NTsKICBtaW4td2lkdGg6IDA7Cn0KLnRlcm0tYmFyIHsKICBkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47CiAgcGFkZGluZzogOHB4IDE0cHg7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCB2YXIoLS1saW5lKTsKICBjb2xvcjogdmFyKC0tZmFpbnQpOyBmb250LXNpemU6IDAuNjZyZW07IGxldHRlci1zcGFjaW5nOiAwLjEyZW07Cn0KLnRlcm0gcHJlIHsgcGFkZGluZzogMTRweCAxNnB4OyBvdmVyZmxvdy14OiBhdXRvOyB9Ci50ZXJtIC5wczEgeyBjb2xvcjogdmFyKC0tamFkZSk7IHVzZXItc2VsZWN0OiBub25lOyB9Ci50ZXJtIC5vdXQgeyBjb2xvcjogdmFyKC0tZmFpbnQpOyB9Ci5jb3B5LWJ0biB7CiAgZm9udC1mYW1pbHk6IHZhcigtLW1vbm8pOyBmb250LXNpemU6IDAuNjRyZW07IGxldHRlci1zcGFjaW5nOiAwLjFlbTsKICBjb2xvcjogdmFyKC0tc2lsdCk7IGJhY2tncm91bmQ6IG5vbmU7IGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpbmUpOwogIGJvcmRlci1yYWRpdXM6IDVweDsgcGFkZGluZzogM3B4IDlweDsgY3Vyc29yOiBwb2ludGVyOwp9Ci5jb3B5LWJ0bjpob3ZlciB7IGNvbG9yOiB2YXIoLS1qYWRlKTsgYm9yZGVyLWNvbG9yOiB2YXIoLS1saW5lLWxpdCk7IH0KCi8qIGNvZGUgYmxvY2tzIChub24tc2hlbGwpICovCi5jb2RlIHsKICBiYWNrZ3JvdW5kOiB2YXIoLS1waXQpOyBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saW5lKTsgYm9yZGVyLXJhZGl1czogMTBweDsKICBwYWRkaW5nOiAxNHB4IDE2cHg7IG92ZXJmbG93LXg6IGF1dG87CiAgZm9udC1mYW1pbHk6IHZhcigtLW1vbm8pOyBmb250LXNpemU6IDAuNzhyZW07IGxpbmUtaGVpZ2h0OiAxLjg7Cn0KLmNvZGUgLmsgeyBjb2xvcjogdmFyKC0tbGFwaXMpOyB9Ci5jb2RlIC5zIHsgY29sb3I6IHZhcigtLWNsYXkpOyB9Ci5jb2RlIC5jIHsgY29sb3I6IHZhcigtLWZhaW50KTsgfQouY29kZSAuaiB7IGNvbG9yOiB2YXIoLS1qYWRlKTsgfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gc2VjdGlvbnMgKi8Kc2VjdGlvbi5iYW5kIHsgcGFkZGluZy1ibG9jazogY2xhbXAoNjRweCwgOXZoLCAxMTBweCk7IH0Kc2VjdGlvbi5iYW5kICsgc2VjdGlvbi5iYW5kIHsgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHZhcigtLWxpbmUpOyB9Ci5iYW5kLWhlYWQgeyBtYXgtd2lkdGg6IDYyY2g7IG1hcmdpbi1ib3R0b206IDQ4cHg7IH0KaDIgewogIGZvbnQtZmFtaWx5OiB2YXIoLS1tb25vKTsgZm9udC13ZWlnaHQ6IDgwMDsKICBmb250LXNpemU6IGNsYW1wKDEuNDVyZW0sIDIuNnZ3LCAycmVtKTsgbGluZS1oZWlnaHQ6IDEuMjsgbGV0dGVyLXNwYWNpbmc6IC0wLjAxZW07CiAgbWFyZ2luLWJsb2NrOiAxNHB4IDEycHg7Cn0KLmJhbmQtaGVhZCBwIHsgY29sb3I6IHZhcigtLXNpbHQpOyB9CgovKiBob3cgaXQgd29ya3Mg4oCUIGEgcmVhbCBzZXF1ZW5jZSwgc28gdGhlIHN0ZXBzIGFyZSBudW1iZXJlZCAqLwouc3RlcHMgeyBkaXNwbGF5OiBncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdCgzLCBtaW5tYXgoMCwgMWZyKSk7IGdhcDogMjBweDsgfQpAbWVkaWEgKG1heC13aWR0aDogOTYwcHgpIHsgLnN0ZXBzIHsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAxZnI7IH0gfQouc3RlcCB7CiAgYmFja2dyb3VuZDogdmFyKC0tYmFzYWx0KTsgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGluZSk7IGJvcmRlci1yYWRpdXM6IDEycHg7CiAgcGFkZGluZzogMjJweDsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgZ2FwOiAxNHB4OwogIG1pbi13aWR0aDogMDsKfQouc3RlcC1ubyB7CiAgZm9udC1mYW1pbHk6IHZhcigtLW1vbm8pOyBmb250LXNpemU6IDAuNjZyZW07IGxldHRlci1zcGFjaW5nOiAwLjJlbTsgY29sb3I6IHZhcigtLWNsYXkpOwogIGRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGdhcDogOHB4Owp9Ci5zdGVwIGgzIHsgZm9udC1mYW1pbHk6IHZhcigtLW1vbm8pOyBmb250LXdlaWdodDogNzAwOyBmb250LXNpemU6IDAuOTVyZW07IGxldHRlci1zcGFjaW5nOiAwLjAxZW07IH0KLnN0ZXAgcCB7IGNvbG9yOiB2YXIoLS1zaWx0KTsgZm9udC1zaXplOiAwLjk1cmVtOyB9Ci5zdGVwIC5jb2RlIHsgbWFyZ2luLXRvcDogYXV0bzsgfQoKLyogZmVhdHVyZSBjYXJkcyAqLwouY2FyZHMgeyBkaXNwbGF5OiBncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdChhdXRvLWZpdCwgbWlubWF4KDMxMHB4LCAxZnIpKTsgZ2FwOiAyMHB4OyB9Ci5jYXJkIHsKICBiYWNrZ3JvdW5kOiB2YXIoLS1iYXNhbHQpOyBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saW5lKTsgYm9yZGVyLXJhZGl1czogMTJweDsKICBwYWRkaW5nOiAyNHB4OyB0cmFuc2l0aW9uOiBib3JkZXItY29sb3IgMC4yNXMsIHRyYW5zZm9ybSAwLjI1cywgYmFja2dyb3VuZCAwLjI1czsKfQouY2FyZDpob3ZlciB7IGJvcmRlci1jb2xvcjogdmFyKC0tbGluZS1saXQpOyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTNweCk7IGJhY2tncm91bmQ6IHZhcigtLWJhc2FsdC0yKTsgfQouY2FyZCAuaWNvbiB7IGNvbG9yOiB2YXIoLS1qYWRlKTsgbWFyZ2luLWJvdHRvbTogMTZweDsgfQouY2FyZCBoMyB7IGZvbnQtZmFtaWx5OiB2YXIoLS1tb25vKTsgZm9udC13ZWlnaHQ6IDcwMDsgZm9udC1zaXplOiAwLjk1cmVtOyBtYXJnaW4tYm90dG9tOiA4cHg7IH0KLmNhcmQgcCB7IGNvbG9yOiB2YXIoLS1zaWx0KTsgZm9udC1zaXplOiAwLjk1cmVtOyB9Ci5jYXJkIGNvZGUgewogIGZvbnQtZmFtaWx5OiB2YXIoLS1tb25vKTsgZm9udC1zaXplOiAwLjhlbTsgY29sb3I6IHZhcigtLWNsYXkpOwogIGJhY2tncm91bmQ6IHZhcigtLXBpdCk7IGJvcmRlci1yYWRpdXM6IDRweDsgcGFkZGluZzogMXB4IDVweDsKfQoKLyogcXVpY2tzdGFydCBzdHJpcCAqLwoucXVpY2sgeyBkaXNwbGF5OiBncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IG1pbm1heCgwLCA1ZnIpIG1pbm1heCgwLCA3ZnIpOyBnYXA6IGNsYW1wKDMycHgsIDV2dywgNjRweCk7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IH0KQG1lZGlhIChtYXgtd2lkdGg6IDk2MHB4KSB7IC5xdWljayB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogMWZyOyB9IH0KLnF1aWNrIHAgeyBjb2xvcjogdmFyKC0tc2lsdCk7IH0KLnF1aWNrIC5tb3JlLWxpbmsgeyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IG1hcmdpbi10b3A6IDE4cHg7IH0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHByb3NlICovCi5wYWdlLXNoZWxsIHsgcGFkZGluZy1ibG9jazogY2xhbXAoNTZweCwgOHZoLCA5NnB4KTsgfQoucHJvc2UgeyBtYXgtd2lkdGg6IDcwY2g7IH0KLnByb3NlLWNlbnRlciB7IG1hcmdpbi1pbmxpbmU6IGF1dG87IH0KLnByb3NlID4gKiArICogeyBtYXJnaW4tdG9wOiAxLjE1ZW07IH0KLnByb3NlIGgxIHsgbWFyZ2luLWJvdHRvbTogOHB4OyB9Ci5wcm9zZSBoMiB7CiAgbWFyZ2luLXRvcDogMi42ZW07CiAgcGFkZGluZy10b3A6IDEuNGVtOwogIGJvcmRlci10b3A6IDFweCBzb2xpZCB2YXIoLS1saW5lKTsKfQoucHJvc2UgcCB7IGNvbG9yOiAjYzdkOGNkOyB9Ci5wcm9zZSBzdHJvbmcgeyBjb2xvcjogdmFyKC0taW5rKTsgfQoucHJvc2UgY29kZSB7CiAgZm9udC1mYW1pbHk6IHZhcigtLW1vbm8pOyBmb250LXNpemU6IDAuOGVtOyBjb2xvcjogdmFyKC0tY2xheSk7CiAgYmFja2dyb3VuZDogdmFyKC0tcGl0KTsgYm9yZGVyLXJhZGl1czogNHB4OyBwYWRkaW5nOiAxcHggNXB4Owp9Ci5raWNrZXIgewogIGZvbnQtZmFtaWx5OiB2YXIoLS1tb25vKTsgZm9udC1zaXplOiAwLjcycmVtOyBsZXR0ZXItc3BhY2luZzogMC4zZW07CiAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgY29sb3I6IHZhcigtLWphZGUpOwp9CgovKiBkb2NzIGxheW91dCAoYXJjaGl0ZWN0dXJlIC8gcXVpY2tzdGFydCkgKi8KLmRvYy1ncmlkIHsgZGlzcGxheTogZ3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoYXV0by1maXQsIG1pbm1heCgzMTBweCwgMWZyKSk7IGdhcDogMjBweDsgbWFyZ2luLWJsb2NrOiAzNnB4OyB9Ci5mbG93IHsgbWFyZ2luLWJsb2NrOiA0MHB4IDhweDsgb3ZlcmZsb3cteDogYXV0bzsgfQouZmxvdyBzdmcgeyBkaXNwbGF5OiBibG9jazsgbWluLXdpZHRoOiA3MjBweDsgd2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgfQoubm90ZSB7CiAgYm9yZGVyLWxlZnQ6IDNweCBzb2xpZCB2YXIoLS1jbGF5KTsgYmFja2dyb3VuZDogdmFyKC0tYmFzYWx0KTsKICBib3JkZXItcmFkaXVzOiAwIDEwcHggMTBweCAwOyBwYWRkaW5nOiAxNHB4IDE4cHg7IGNvbG9yOiB2YXIoLS1zaWx0KTsgZm9udC1zaXplOiAwLjk1cmVtOwp9CgovKiBlbnZpcm9ubWVudC12YXJpYWJsZSB0YWJsZXMgKGNvbmZpZ3VyYXRpb24gcGFnZSkgKi8KLmVudi1zY3JvbGwgeyBvdmVyZmxvdy14OiBhdXRvOyBtYXJnaW4tdG9wOiAyMHB4OyB9Ci5lbnYtdGFibGUgeyB3aWR0aDogMTAwJTsgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsgfQouZW52LXRhYmxlIHRoLCAuZW52LXRhYmxlIHRkIHsKICB0ZXh0LWFsaWduOiBsZWZ0OyBwYWRkaW5nOiAxMHB4IDE0cHg7IHZlcnRpY2FsLWFsaWduOiB0b3A7CiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHZhcigtLWxpbmUpOwp9Ci5lbnYtdGFibGUgdGggewogIGZvbnQtZmFtaWx5OiB2YXIoLS1tb25vKTsgZm9udC13ZWlnaHQ6IDQwMDsgZm9udC1zaXplOiAwLjY2cmVtOwogIGxldHRlci1zcGFjaW5nOiAwLjJlbTsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgY29sb3I6IHZhcigtLWZhaW50KTsKfQouZW52LXRhYmxlIHRkOm50aC1jaGlsZCgxKSB7IGZvbnQtZmFtaWx5OiB2YXIoLS1tb25vKTsgZm9udC1zaXplOiAwLjc4cmVtOyBjb2xvcjogdmFyKC0tY2xheSk7IHdoaXRlLXNwYWNlOiBub3dyYXA7IH0KLmVudi10YWJsZSB0ZDpudGgtY2hpbGQoMikgeyBmb250LWZhbWlseTogdmFyKC0tbW9ubyk7IGZvbnQtc2l6ZTogMC43OHJlbTsgY29sb3I6IHZhcigtLWZhaW50KTsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgfQouZW52LXRhYmxlIHRkOm50aC1jaGlsZCgzKSB7IGNvbG9yOiB2YXIoLS1zaWx0KTsgZm9udC1zaXplOiAwLjk1cmVtOyB9Ci5lbnYtdGFibGUgZW0geyBmb250LXN0eWxlOiBub3JtYWw7IGNvbG9yOiB2YXIoLS1mYWludCk7IH0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBidXR0b25zICovCi5idG4gewogIGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDEwcHg7CiAgZm9udC1mYW1pbHk6IHZhcigtLW1vbm8pOyBmb250LXNpemU6IDAuNzhyZW07IGZvbnQtd2VpZ2h0OiA3MDA7IGxldHRlci1zcGFjaW5nOiAwLjA4ZW07CiAgcGFkZGluZzogMTJweCAyMHB4OyBib3JkZXItcmFkaXVzOiA4cHg7IGJvcmRlcjogMXB4IHNvbGlkIHRyYW5zcGFyZW50Owp9Ci5idG4tc29saWQgeyBiYWNrZ3JvdW5kOiB2YXIoLS1qYWRlKTsgY29sb3I6ICMwNTIwMTg7IH0KLmJ0bi1zb2xpZDpob3ZlciB7IGJhY2tncm91bmQ6ICM1Y2VhYjY7IHRleHQtZGVjb3JhdGlvbjogbm9uZTsgfQouYnRuLWdob3N0IHsgYm9yZGVyLWNvbG9yOiB2YXIoLS1saW5lKTsgY29sb3I6IHZhcigtLWluayk7IH0KLmJ0bi1naG9zdDpob3ZlciB7IGJvcmRlci1jb2xvcjogdmFyKC0tbGluZS1saXQpOyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IH0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gZm9vdGVyICovCi5zaXRlLWZvb3QgeyBib3JkZXItdG9wOiAxcHggc29saWQgdmFyKC0tbGluZSk7IG1hcmdpbi10b3A6IGNsYW1wKDY0cHgsIDl2aCwgMTEwcHgpOyBiYWNrZ3JvdW5kOiB2YXIoLS1waXQpOyB9Ci5mb290LWJhZGdlIHsKICBib3JkZXItYm90dG9tOiAxcHggc29saWQgdmFyKC0tbGluZSk7CiAgcGFkZGluZy1ibG9jazogMThweDsKICBmb250LWZhbWlseTogdmFyKC0tbW9ubyk7IGZvbnQtc2l6ZTogMC43cmVtOyBsZXR0ZXItc3BhY2luZzogMC4xZW07IGNvbG9yOiB2YXIoLS1mYWludCk7CiAgZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiAxMHB4OyBmbGV4LXdyYXA6IHdyYXA7Cn0KLmZvb3QtYmFkZ2UgLmogeyBjb2xvcjogdmFyKC0tamFkZSk7IH0KLmZvb3QtZ3JpZCB7CiAgZGlzcGxheTogZ3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiBtaW5tYXgoMCwgNmZyKSBtaW5tYXgoMCwgM2ZyKSBtaW5tYXgoMCwgM2ZyKTsKICBnYXA6IDQwcHg7IHBhZGRpbmctYmxvY2s6IDQ4cHg7Cn0KQG1lZGlhIChtYXgtd2lkdGg6IDgyMHB4KSB7IC5mb290LWdyaWQgeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmcjsgZ2FwOiAyOHB4OyB9IH0KLmZvb3Qta2kgeyBkaXNwbGF5OiBmbGV4OyBnYXA6IDE4cHg7IGFsaWduLWl0ZW1zOiBmbGV4LXN0YXJ0OyB9Ci5mb290LWtpIHN2ZyB7IGZsZXg6IG5vbmU7IGNvbG9yOiB2YXIoLS1jbGF5KTsgb3BhY2l0eTogMC45OyB9Ci5mb290LWtpIHAgeyBjb2xvcjogdmFyKC0tc2lsdCk7IGZvbnQtc2l6ZTogMC45MnJlbTsgbWF4LXdpZHRoOiA0NmNoOyB9Ci5mb290LWtpIC5nbHlwaC1uYW1lIHsgZm9udC1mYW1pbHk6IHZhcigtLW1vbm8pOyBmb250LXNpemU6IDAuN3JlbTsgbGV0dGVyLXNwYWNpbmc6IDAuMmVtOyBjb2xvcjogdmFyKC0tY2xheSk7IGRpc3BsYXk6IGJsb2NrOyBtYXJnaW4tYm90dG9tOiA2cHg7IH0KLmZvb3QtY29sIGg0IHsKICBmb250LWZhbWlseTogdmFyKC0tbW9ubyk7IGZvbnQtc2l6ZTogMC42OHJlbTsgZm9udC13ZWlnaHQ6IDQwMDsKICBsZXR0ZXItc3BhY2luZzogMC4yNGVtOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBjb2xvcjogdmFyKC0tZmFpbnQpOyBtYXJnaW4tYm90dG9tOiAxNHB4Owp9Ci5mb290LWNvbCB1bCB7IGxpc3Qtc3R5bGU6IG5vbmU7IH0KLmZvb3QtY29sIGxpICsgbGkgeyBtYXJnaW4tdG9wOiA4cHg7IH0KLmZvb3QtY29sIGEgeyBjb2xvcjogdmFyKC0tc2lsdCk7IGZvbnQtc2l6ZTogMC45NXJlbTsgfQouZm9vdC1jb2wgYTpob3ZlciB7IGNvbG9yOiB2YXIoLS1qYWRlKTsgfQouZm9vdC1iYXNlIHsKICBib3JkZXItdG9wOiAxcHggc29saWQgdmFyKC0tbGluZSk7IHBhZGRpbmctYmxvY2s6IDIwcHg7CiAgZm9udC1mYW1pbHk6IHZhcigtLW1vbm8pOyBmb250LXNpemU6IDAuNjZyZW07IGxldHRlci1zcGFjaW5nOiAwLjEyZW07IGNvbG9yOiB2YXIoLS1mYWludCk7CiAgZGlzcGxheTogZmxleDsganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOyBnYXA6IDE2cHg7IGZsZXgtd3JhcDogd3JhcDsKfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSByZXZlYWwgKi8KaHRtbC5oYXMtanMgLnJldmVhbCB7IG9wYWNpdHk6IDA7IHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxNHB4KTsgdHJhbnNpdGlvbjogb3BhY2l0eSAwLjZzIGVhc2UsIHRyYW5zZm9ybSAwLjZzIGN1YmljLWJlemllcigwLjIsIDAuNywgMC4yLCAxKTsgfQpodG1sLmhhcy1qcyAucmV2ZWFsLmlzLWluIHsgb3BhY2l0eTogMTsgdHJhbnNmb3JtOiBub25lOyB9CgpAbWVkaWEgKHByZWZlcnMtcmVkdWNlZC1tb3Rpb246IHJlZHVjZSkgewogIGh0bWwgeyBzY3JvbGwtYmVoYXZpb3I6IGF1dG87IH0KICBbZGF0YS1yaXNlXSwgLmFwZXgtZ2xvdyB7IGFuaW1hdGlvbjogbm9uZTsgfQogIGh0bWwuaGFzLWpzIC5yZXZlYWwgeyBvcGFjaXR5OiAxOyB0cmFuc2Zvcm06IG5vbmU7IHRyYW5zaXRpb246IG5vbmU7IH0KICAuY2FyZCwgLmNhcmQ6aG92ZXIgeyB0cmFuc2Zvcm06IG5vbmU7IH0KfQo="
+  },
+  {
+   "id": "019f1af9-b405-7704-933e-6452c2c64c64",
+   "name": "site.js",
+   "content_type": "text/javascript",
+   "sha256": "4879dbaf2b022b3cff735fbd08b9d60f332ece7f17c4bbf54985cdb969102912",
+   "data_base64": "LyogVXJ1ayBkZWZhdWx0IHNpdGUg4oCUIHByb2dyZXNzaXZlIGVuaGFuY2VtZW50IG9ubHkuIFRoZSBzaXRlIGlzIGZ1bGx5IHVzYWJsZSB3aXRob3V0IHRoaXMgZmlsZS4gKi8KKGZ1bmN0aW9uICgpIHsKICAidXNlIHN0cmljdCI7CiAgZG9jdW1lbnQuZG9jdW1lbnRFbGVtZW50LmNsYXNzTGlzdC5hZGQoImhhcy1qcyIpOwoKICAvLyBNYXJrIHRoZSBjdXJyZW50IHBhZ2UgaW4gdGhlIHNoYXJlZCBoZWFkZXIgKG9uZSBoZWFkZXIgZWxlbWVudCBzZXJ2ZXMgZXZlcnkgcGFnZSkuCiAgdmFyIHBhdGggPSBsb2NhdGlvbi5wYXRobmFtZS5yZXBsYWNlKC9cLyskLywgIiIpIHx8ICIvIjsKICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCIuc2l0ZS1uYXYgYSIpLmZvckVhY2goZnVuY3Rpb24gKGEpIHsKICAgIHZhciBocmVmID0gYS5nZXRBdHRyaWJ1dGUoImhyZWYiKS5yZXBsYWNlKC9cLyskLywgIiIpIHx8ICIvIjsKICAgIGlmIChocmVmID09PSBwYXRoKSBhLnNldEF0dHJpYnV0ZSgiYXJpYS1jdXJyZW50IiwgInBhZ2UiKTsKICB9KTsKCiAgLy8gUmV2ZWFsIHNlY3Rpb25zIGFzIHRoZXkgZW50ZXIgdGhlIHZpZXdwb3J0IChza2lwcGVkIHdoZW4gcmVkdWNlZCBtb3Rpb24gaXMgc2V0KS4KICB2YXIgcmVkdWNlZCA9IHdpbmRvdy5tYXRjaE1lZGlhKCIocHJlZmVycy1yZWR1Y2VkLW1vdGlvbjogcmVkdWNlKSIpLm1hdGNoZXM7CiAgdmFyIHRhcmdldHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCIucmV2ZWFsIik7CiAgaWYgKHJlZHVjZWQgfHwgISgiSW50ZXJzZWN0aW9uT2JzZXJ2ZXIiIGluIHdpbmRvdykpIHsKICAgIHRhcmdldHMuZm9yRWFjaChmdW5jdGlvbiAoZWwpIHsgZWwuY2xhc3NMaXN0LmFkZCgiaXMtaW4iKTsgfSk7CiAgfSBlbHNlIHsKICAgIHZhciBpbyA9IG5ldyBJbnRlcnNlY3Rpb25PYnNlcnZlcihmdW5jdGlvbiAoZW50cmllcykgewogICAgICBlbnRyaWVzLmZvckVhY2goZnVuY3Rpb24gKGVudHJ5KSB7CiAgICAgICAgaWYgKGVudHJ5LmlzSW50ZXJzZWN0aW5nKSB7CiAgICAgICAgICBlbnRyeS50YXJnZXQuY2xhc3NMaXN0LmFkZCgiaXMtaW4iKTsKICAgICAgICAgIGlvLnVub2JzZXJ2ZShlbnRyeS50YXJnZXQpOwogICAgICAgIH0KICAgICAgfSk7CiAgICB9LCB7IHJvb3RNYXJnaW46ICIwcHggMHB4IC04JSAwcHgiIH0pOwogICAgdGFyZ2V0cy5mb3JFYWNoKGZ1bmN0aW9uIChlbCkgeyBpby5vYnNlcnZlKGVsKTsgfSk7CiAgfQoKICAvLyBDb3B5LXRvLWNsaXBib2FyZCBvbiB0ZXJtaW5hbCBibG9ja3MuCiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgiW2RhdGEtY29weV0iKS5mb3JFYWNoKGZ1bmN0aW9uIChidG4pIHsKICAgIGJ0bi5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsIGZ1bmN0aW9uICgpIHsKICAgICAgdmFyIHByZSA9IGJ0bi5jbG9zZXN0KCIudGVybSIpLnF1ZXJ5U2VsZWN0b3IoInByZSIpOwogICAgICB2YXIgdGV4dCA9IEFycmF5LnByb3RvdHlwZS5tYXAKICAgICAgICAuY2FsbChwcmUucXVlcnlTZWxlY3RvckFsbCgiW2RhdGEtY21kXSIpLCBmdW5jdGlvbiAobikgeyByZXR1cm4gbi50ZXh0Q29udGVudDsgfSkKICAgICAgICAuam9pbigiXG4iKSB8fCBwcmUudGV4dENvbnRlbnQudHJpbSgpOwogICAgICBuYXZpZ2F0b3IuY2xpcGJvYXJkLndyaXRlVGV4dCh0ZXh0KS50aGVuKGZ1bmN0aW9uICgpIHsKICAgICAgICB2YXIgbGFiZWwgPSBidG4udGV4dENvbnRlbnQ7CiAgICAgICAgYnRuLnRleHRDb250ZW50ID0gImNvcGllZCI7CiAgICAgICAgc2V0VGltZW91dChmdW5jdGlvbiAoKSB7IGJ0bi50ZXh0Q29udGVudCA9IGxhYmVsOyB9LCAxNjAwKTsKICAgICAgfSk7CiAgICB9KTsKICB9KTsKfSkoKTsK"
+  },
+  {
+   "id": "019f1af9-b406-79f4-a521-68f5bb3e4763",
+   "name": "favicon.svg",
+   "content_type": "image/svg+xml",
+   "sha256": "6cbac5134a74fcb2573bf81b1992735141b20fff68d9e8d632b26d4adbd2f451",
+   "data_base64": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTMiIGZpbGw9IiMwYTEwMGUiLz4KICA8cGF0aCBmaWxsPSIjNDZlMGE4IiBkPSJNMzIuMCA1Ni44QzM4LjAgNTEuMSA1My40IDM2LjYgNTguMCAzNC40QzU1LjkgMzMuMiA1NC40IDMxLjkgNTIuNyAzMC4wTDUyLjkgMzAuMUw1My42IDI5LjRDNDguNiAyMy4yIDM4LjEgMTAuOSAzNi43IDcuMUMzNS4yIDkuMCAzMy43IDEwLjQgMzEuOSAxMS41QzMwLjEgMTAuNCAyOC43IDkuMCAyNy4yIDcuMUMyNS43IDEwLjkgMTUuMiAyMy4yIDEwLjIgMjkuNEwxMS4wIDMwLjFMMTEuNCAyOS44QzkuNyAzMS44IDguMSAzMy4yIDYuMCAzNC40QzEwLjUgMzYuNiAyNS4yIDUwLjQgMzEuMiA1Ni4xTDMyLjAgNTYuOFpNMzEuOSA1NS4yQzI2LjggNDkuMCAxMy4yIDMzLjUgMTEuNiAyOS41QzE3LjQgMjQuMSAyNy4xIDE1LjMgMzEuOSAxMi41QzM0LjYgMTQuMSAzOC43IDE3LjMgNDIuOCAyMC45QzM2LjcgMjAuNSAyOS4zIDE5LjQgMjYuNyAxOC4zQzI2LjkgMTkuNCAyNy4wIDIwLjYgMjcuMCAyMS43QzI3LjAgMjIuOSAyNi45IDI0LjEgMjYuNyAyNS4xQzMwLjAgMjMuOCAzNy44IDIyLjcgNDQuMSAyMi4xQzQ2LjYgMjQuMyA0OS4wIDI2LjQgNTEuMCAyOC4zQzQ0LjEgMjguMCAyOS43IDI2LjggMjYuNyAyNS42QzI2LjkgMjYuNiAyNy4wIDI3LjggMjcuMCAyOS4wQzI3LjAgMzAuMiAyNi45IDMxLjQgMjYuNyAzMi40QzMwLjQgMzEuMCA0NS4yIDI5LjggNTEuOSAyOS4yTDUyLjMgMjkuNUM1MS44IDMwLjcgNTAuMyAzMi45IDQ4LjIgMzUuNUM0MC43IDM1LjAgMjkuMyAzMy45IDI2LjcgMzIuOUMyNi45IDMzLjkgMjcuMCAzNS4xIDI3LjAgMzYuM0MyNy4wIDM3LjUgMjYuOSAzOC43IDI2LjcgMzkuN0MyOS43IDM4LjYgMzkuNyAzNy42IDQ3LjEgMzYuOUM0NS43IDM4LjggNDQuMCA0MC44IDQyLjQgNDIuOEMzNi4zIDQyLjMgMjkuMyA0MS4yIDI2LjcgNDAuMUMyNi45IDQxLjIgMjcuMCA0Mi40IDI3LjAgNDMuNUMyNy4wIDQ0LjggMjYuOSA0Ni4wIDI2LjcgNDcuMEMyOS42IDQ1LjggMzUuNSA0NC45IDQxLjEgNDQuM0MzNy42IDQ4LjQgMzQuMSA1Mi41IDMxLjkgNTUuMloiLz4KPC9zdmc+Cg=="
+  },
+  {
+   "id": "019f1af9-b407-7e41-a68d-7ecaff75442a",
+   "name": "ki.svg",
+   "content_type": "image/svg+xml",
+   "sha256": "e90b4083e8c006971252a8f43bf386737f750ff8bf6847850ad87d456bfdce21",
+   "data_base64": "PCEtLSDwkoagIEtJLCAicGxhY2UiIOKAlCBvdXRsaW5lcyBmcm9tIE5vdG8gU2FucyBDdW5laWZvcm0gKE9GTCkgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSI0IDUgNTYgNTQiPgogIDxwYXRoIGZpbGw9IiM0NmUwYTgiIGQ9Ik0zMi4wIDU2LjhDMzguMCA1MS4xIDUzLjQgMzYuNiA1OC4wIDM0LjRDNTUuOSAzMy4yIDU0LjQgMzEuOSA1Mi43IDMwLjBMNTIuOSAzMC4xTDUzLjYgMjkuNEM0OC42IDIzLjIgMzguMSAxMC45IDM2LjcgNy4xQzM1LjIgOS4wIDMzLjcgMTAuNCAzMS45IDExLjVDMzAuMSAxMC40IDI4LjcgOS4wIDI3LjIgNy4xQzI1LjcgMTAuOSAxNS4yIDIzLjIgMTAuMiAyOS40TDExLjAgMzAuMUwxMS40IDI5LjhDOS43IDMxLjggOC4xIDMzLjIgNi4wIDM0LjRDMTAuNSAzNi42IDI1LjIgNTAuNCAzMS4yIDU2LjFMMzIuMCA1Ni44Wk0zMS45IDU1LjJDMjYuOCA0OS4wIDEzLjIgMzMuNSAxMS42IDI5LjVDMTcuNCAyNC4xIDI3LjEgMTUuMyAzMS45IDEyLjVDMzQuNiAxNC4xIDM4LjcgMTcuMyA0Mi44IDIwLjlDMzYuNyAyMC41IDI5LjMgMTkuNCAyNi43IDE4LjNDMjYuOSAxOS40IDI3LjAgMjAuNiAyNy4wIDIxLjdDMjcuMCAyMi45IDI2LjkgMjQuMSAyNi43IDI1LjFDMzAuMCAyMy44IDM3LjggMjIuNyA0NC4xIDIyLjFDNDYuNiAyNC4zIDQ5LjAgMjYuNCA1MS4wIDI4LjNDNDQuMSAyOC4wIDI5LjcgMjYuOCAyNi43IDI1LjZDMjYuOSAyNi42IDI3LjAgMjcuOCAyNy4wIDI5LjBDMjcuMCAzMC4yIDI2LjkgMzEuNCAyNi43IDMyLjRDMzAuNCAzMS4wIDQ1LjIgMjkuOCA1MS45IDI5LjJMNTIuMyAyOS41QzUxLjggMzAuNyA1MC4zIDMyLjkgNDguMiAzNS41QzQwLjcgMzUuMCAyOS4zIDMzLjkgMjYuNyAzMi45QzI2LjkgMzMuOSAyNy4wIDM1LjEgMjcuMCAzNi4zQzI3LjAgMzcuNSAyNi45IDM4LjcgMjYuNyAzOS43QzI5LjcgMzguNiAzOS43IDM3LjYgNDcuMSAzNi45QzQ1LjcgMzguOCA0NC4wIDQwLjggNDIuNCA0Mi44QzM2LjMgNDIuMyAyOS4zIDQxLjIgMjYuNyA0MC4xQzI2LjkgNDEuMiAyNy4wIDQyLjQgMjcuMCA0My41QzI3LjAgNDQuOCAyNi45IDQ2LjAgMjYuNyA0Ny4wQzI5LjYgNDUuOCAzNS41IDQ0LjkgNDEuMSA0NC4zQzM3LjYgNDguNCAzNC4xIDUyLjUgMzEuOSA1NS4yWiIvPgo8L3N2Zz4K"
+  }
+ ],
+ "settings": [
+  {
+   "id": "019f1af9-b408-79df-8528-bc339d187bde",
+   "key": "site.head_html",
+   "value": "<link rel=\"stylesheet\" href=\"/_assets/29e1d5c967f32c4b3fd582f5ccc1e8436355ded474082ac26fa649a18c0d632c/site.css\"><link rel=\"icon\" type=\"image/svg+xml\" href=\"/_assets/6cbac5134a74fcb2573bf81b1992735141b20fff68d9e8d632b26d4adbd2f451/favicon.svg\"><script defer src=\"/_assets/4879dbaf2b022b3cff735fbd08b9d60f332ece7f17c4bbf54985cdb969102912/site.js\"></script><meta name=\"theme-color\" content=\"#0a100e\">"
+  }
+ ]
+}

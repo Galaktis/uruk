@@ -1,0 +1,9 @@
+<li>
+  <button class="node" hx-get="{% url 'studio:element' node.element.pk %}" hx-target="#editor">
+    <span class="kind">{{ node.element.kind }}</span>{% if node.preview %} <span class="text">{{ node.preview }}</span>{% endif %}
+  </button>
+  {% if node.target_id %}
+    <button class="follow" hx-get="{% url 'studio:tree' node.target_id %}" hx-target="#tree" title="Edit the shared element this references">open shared ↗</button>
+  {% endif %}
+  {% if node.children %}<ul>{% for child in node.children %}{% include "studio/_node.html" with node=child %}{% endfor %}</ul>{% endif %}
+</li>

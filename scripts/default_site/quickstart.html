@@ -1,0 +1,71 @@
+<section class="page-shell">
+  <div class="wrap">
+    <p class="kicker">Quickstart</p>
+    <h1>From zero to a served site</h1>
+    <div class="prose" style="margin-top:18px">
+      <p>
+        You need <strong>Docker</strong> (for Postgres and Redis), <strong>Python 3.15</strong> and
+        <strong>uv</strong>. Nothing else — no Node, no bundler, no template directory.
+      </p>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>1 · Raise the city</h2>
+      <p>On first start, migrations run for the public schema and every tenant schema; the default tenant is created, seeded with this site, and published. The website answers on port 8000, the remote MCP endpoint on 8001.</p>
+    </div>
+    <div class="term" style="margin-top:18px">
+      <div class="term-bar"><span>sh</span><button class="copy-btn" type="button" data-copy>copy</button></div>
+      <pre><code><span class="ps1">$ </span><span data-cmd>git clone https://github.com/Galaktis/uruk && cd uruk</span>
+<span class="ps1">$ </span><span data-cmd>docker compose up -d</span>
+<span class="out"># http://localhost:8000 — any hostname serves the default tenant</span>
+<span class="out"># http://localhost:8001/mcp — the remote MCP endpoint</span></code></pre>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>2 · Claim the throne</h2>
+      <p>
+        No credentials live in the startup path. The tenant's first superuser is claimed over the API
+        with a <strong>claim code</strong> that only the server's operator can read (it is printed in the
+        app's logs while the tenant is unclaimed). <code>URUK_ADMIN_EMAIL</code> restricts the claim to
+        one address; once claimed, the endpoint refuses forever. Then sign in at <code>/uruk/</code>.
+        Details on the <a href="/configuration">configuration</a> page.
+      </p>
+    </div>
+    <div class="term" style="margin-top:18px">
+      <div class="term-bar"><span>sh</span><button class="copy-btn" type="button" data-copy>copy</button></div>
+      <pre><code><span class="ps1">$ </span><span data-cmd>docker compose exec app uv run python manage.py claim_code</span>
+<span class="out">3f9c…  # the default tenant's claim code</span>
+<span class="ps1">$ </span><span data-cmd>curl -X POST http://localhost:8000/api/bootstrap -H "Content-Type: application/json" -d "{\"email\": \"you@example.com\", \"code\": \"&lt;claim code&gt;\"}"</span>
+<span class="out">{"set_password_url": "/api/set-password?uid=…&token=…"}  # one-shot; a second claim is refused</span></code></pre>
+    </div>
+
+    <div class="prose" style="max-width:none">
+      <h2>3 · Hand a scribe the stylus</h2>
+      <p>Issue an API token for a tenant user (the claimed superuser's username is its email), then point an MCP client at the remote endpoint. The agent can do exactly what that user's permissions allow — create pages, move elements, upload assets, publish.</p>
+    </div>
+    <div class="term" style="margin-top:18px">
+      <div class="term-bar"><span>sh</span><button class="copy-btn" type="button" data-copy>copy</button></div>
+      <pre><code><span class="ps1">$ </span><span data-cmd>docker compose exec app uv run python manage.py create_api_token default you@example.com</span>
+<span class="out">uruk_…  # shown once — store it</span></code></pre>
+    </div>
+    <div class="code" style="margin-top:18px"><pre><code><span class="c">// in an MCP client config (Claude Code, etc.)</span>
+{
+  <span class="k">"mcpServers"</span>: {
+    <span class="k">"uruk"</span>: {
+      <span class="k">"type"</span>: <span class="s">"http"</span>,
+      <span class="k">"url"</span>: <span class="s">"http://localhost:8001/mcp"</span>,
+      <span class="k">"headers"</span>: { <span class="k">"Authorization"</span>: <span class="s">"Bearer uruk_…"</span> }
+    }
+  }
+}</code></pre></div>
+
+    <div class="prose" style="max-width:none">
+      <h2>4 · Review, then publish</h2>
+      <p>Every edit is an ordinary write to the site's draft. Visitors keep the published revision while editors watch the draft at <code>/_preview/</code> — or sign in at <code>/admin/</code> and open the <a href="/_studio/">Studio</a> to review the agent's work, fix it, and publish. Every publish is kept: roll back to any revision, or discard the draft.</p>
+    </div>
+    <div class="note" style="margin-top:18px">
+      This page — the one explaining the system — is itself rows in the default tenant.
+      Ask your agent to reword this paragraph and publish, refresh, and it's done. No commit, no build, no deploy.
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+# Release: pushing a version tag (v1.2.3) runs the full CI gate, then builds the image
+# for amd64 and arm64 and publishes it to Docker Hub and the GitHub Container Registry
+# as 1.2.3, 1.2 and latest. Pre-release tags (v1.2.3-rc.1) publish only their own tag.
+#
+# Needs the DOCKERHUB_USERNAME and DOCKERHUB_TOKEN repository secrets. The Docker Hub
+# repository defaults to galaktis/uruk; override it with the DOCKERHUB_IMAGE variable.
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+jobs:
+  ci:
+    # Only the canonical repository publishes; forks and mirrors skip the whole release.
+    if: github.repository == 'Galaktis/uruk'
+    uses: ./.github/workflows/ci.yml
+    permissions:
+      contents: write # the CI test job may push the coverage badge
+
+  image:
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write # push to ghcr.io
+    env:
+      DOCKERHUB_IMAGE: ${{ vars.DOCKERHUB_IMAGE || 'galaktis/uruk' }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: docker/setup-qemu-action@v4.4.0
+      - uses: docker/setup-buildx-action@v4.4.1
+
+      - uses: docker/login-action@v4.7.0
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - uses: docker/login-action@v4.7.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v6.2.0
+        with:
+          images: |
+            ${{ env.DOCKERHUB_IMAGE }}
+            ghcr.io/galaktis/uruk
+          # Pre-1.0 there is no meaningful major-only tag, so only x.y.z, x.y and latest.
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+
+      - uses: docker/build-push-action@v7.4.0
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: VERSION=${{ steps.meta.outputs.version }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

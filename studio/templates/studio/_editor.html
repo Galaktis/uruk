@@ -1,0 +1,23 @@
+<h2><span class="kind">{{ element.kind }}</span> <small>{{ element.pk }}</small></h2>
+{% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+{% if saved %}<p class="saved" role="status">Saved to the draft — publish to make it live.</p>{% endif %}
+<form hx-post="{% url 'studio:element' element.pk %}" hx-target="#editor">
+  <label>Content
+    <textarea name="content" rows="8"{% if not can_edit %} readonly{% endif %}>{{ content }}</textarea>
+  </label>
+  <label>Parameters (JSON)
+    <textarea name="parameters" rows="8" spellcheck="false"{% if not can_edit %} readonly{% endif %}>{{ parameters }}</textarea>
+  </label>
+  {% if can_edit %}
+  <div class="actions">
+    <button type="submit">Save</button>
+    {% if element.parent_id %}
+    <button type="button" hx-post="{% url 'studio:move' element.pk %}" hx-vals='{"direction": "up"}' hx-target="#editor" title="Move up">↑</button>
+    <button type="button" hx-post="{% url 'studio:move' element.pk %}" hx-vals='{"direction": "down"}' hx-target="#editor" title="Move down">↓</button>
+    {% endif %}
+    {% if can_delete %}
+    <button type="button" class="danger" hx-post="{% url 'studio:delete' element.pk %}" hx-target="#editor" hx-confirm="Delete this element and everything inside it?">Delete</button>
+    {% endif %}
+  </div>
+  {% endif %}
+</form>
