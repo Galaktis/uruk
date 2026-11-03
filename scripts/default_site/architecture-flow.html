@@ -1,0 +1,60 @@
+<section class="page-shell">
+  <div class="wrap">
+    <p class="kicker">Architecture</p>
+    <h1>How a request becomes a page</h1>
+    <div class="prose" style="margin-top:18px">
+      <p>
+        One deployment, one Postgres, many sites. Tenant routing runs first on every request:
+        the <strong>Host header</strong> resolves to a Domain row, the connection's
+        <strong>search_path</strong> switches to that tenant's schema, and from that moment every
+        query — pages, elements, users, assets — can only see one site's world.
+      </p>
+    </div>
+    <div class="flow" role="img" aria-label="Request flow: Host header to Domain to tenant schema to page to element tree to cached HTML">
+      <svg viewBox="0 0 920 130">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 Z" fill="#67806f"/>
+          </marker>
+        </defs>
+        <g font-family="Martian Mono, monospace" text-anchor="middle">
+          <rect x="8" y="34" width="128" height="44" rx="8" fill="#3e7bd6" fill-opacity="0.1" stroke="#3e7bd6" stroke-opacity="0.6"/>
+          <text x="72" y="60" font-size="11" letter-spacing="1" fill="#94bdea">REQUEST</text>
+          <text x="72" y="102" font-size="9" fill="#67806f">Host: any.site</text>
+
+          <line x1="140" y1="56" x2="164" y2="56" stroke="#67806f" marker-end="url(#arr)"/>
+          <rect x="168" y="34" width="128" height="44" rx="8" fill="#46a0cc" fill-opacity="0.1" stroke="#46a0cc" stroke-opacity="0.6"/>
+          <text x="232" y="60" font-size="11" letter-spacing="1" fill="#8cc9e4">DOMAIN</text>
+          <text x="232" y="102" font-size="9" fill="#67806f">public schema</text>
+
+          <line x1="300" y1="56" x2="324" y2="56" stroke="#67806f" marker-end="url(#arr)"/>
+          <rect x="328" y="34" width="128" height="44" rx="8" fill="#46c2b8" fill-opacity="0.1" stroke="#46c2b8" stroke-opacity="0.6"/>
+          <text x="392" y="60" font-size="11" letter-spacing="1" fill="#8adcd2">TENANT</text>
+          <text x="392" y="102" font-size="9" fill="#67806f">search_path = site</text>
+
+          <line x1="460" y1="56" x2="484" y2="56" stroke="#67806f" marker-end="url(#arr)"/>
+          <rect x="488" y="34" width="128" height="44" rx="8" fill="#46e0a8" fill-opacity="0.08" stroke="#46e0a8" stroke-opacity="0.5"/>
+          <text x="552" y="60" font-size="11" letter-spacing="1" fill="#8fe4c2">PAGE</text>
+          <text x="552" y="102" font-size="9" fill="#67806f">slug tree → row</text>
+
+          <line x1="620" y1="56" x2="644" y2="56" stroke="#67806f" marker-end="url(#arr)"/>
+          <rect x="648" y="34" width="128" height="44" rx="8" fill="#46e0a8" fill-opacity="0.12" stroke="#46e0a8" stroke-opacity="0.65"/>
+          <text x="712" y="60" font-size="11" letter-spacing="1" fill="#9ff0d3">ELEMENTS</text>
+          <text x="712" y="102" font-size="9" fill="#67806f">tree → renderers</text>
+
+          <line x1="780" y1="56" x2="804" y2="56" stroke="#67806f" marker-end="url(#arr)"/>
+          <rect x="808" y="34" width="104" height="44" rx="8" fill="#46e0a8" fill-opacity="0.18" stroke="#46e0a8"/>
+          <text x="860" y="60" font-size="11" letter-spacing="1" fill="#bdf5e0">HTML</text>
+          <text x="860" y="102" font-size="9" fill="#67806f">computed cache</text>
+        </g>
+      </svg>
+    </div>
+    <div class="prose">
+      <p>
+        The two right-hand stages almost never run. Computed HTML is cached per page, and a
+        dependency graph keeps that cache honest — which is the part of a CMS that is usually
+        wrong, and the part Uruk treats as the core of the design.
+      </p>
+    </div>
+  </div>
+</section>

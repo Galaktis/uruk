@@ -1,0 +1,96 @@
+# Production overlay for a single machine (a home server, a small VM):
+#
+#   cp .env.prod.example .env   # then fill it in
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+#
+# On top of the base file it:
+# - requires a real secret key and database password, and turns on the proxy-aware
+#   HTTPS settings (URUK_BEHIND_PROXY);
+# - publishes nothing to the network: the website and MCP bind to 127.0.0.1 only,
+#   Postgres is not published at all. Visitors arrive through `cloudflared`, a
+#   Cloudflare Tunnel that dials out to Cloudflare (no open port, TLS at the edge);
+#   route the tunnel's public hostname to http://app:8000 in the Cloudflare dashboard;
+# - drops Redis (the cache lives in Postgres) and restarts everything on reboot;
+# - dumps the database every night to ./backups (kept URUK_BACKUP_KEEP_DAYS days).
+#   Copy that directory off the machine — a backup on the same disk is not a backup.
+
+x-uruk-env: &uruk-env
+  URUK_DB_HOST: postgres
+  URUK_DB_PORT: "5432"
+  URUK_DB_PASSWORD: ${URUK_DB_PASSWORD:?set URUK_DB_PASSWORD in .env}
+  URUK_SECRET_KEY: ${URUK_SECRET_KEY:?set URUK_SECRET_KEY in .env}
+  URUK_ENV: ${URUK_ENV:-production}
+  # 127.0.0.1 keeps the container healthcheck (which calls itself) allowed.
+  URUK_ALLOWED_HOSTS: ${URUK_ALLOWED_HOSTS:?set URUK_ALLOWED_HOSTS in .env},127.0.0.1
+  URUK_ADMIN_EMAIL: ${URUK_ADMIN_EMAIL:?set URUK_ADMIN_EMAIL in .env}
+  URUK_DEFAULT_SITE: ${URUK_DEFAULT_SITE:-blank}
+  URUK_ADMIN_PATH: ${URUK_ADMIN_PATH:-uruk}
+  URUK_BEHIND_PROXY: "True"
+
+services:
+  app:
+    environment: *uruk-env
+    ports: !override
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+
+  mcp:
+    # Reach it from your laptop through SSH: `ssh -L 8001:127.0.0.1:8001 <server>`.
+    environment: *uruk-env
+    ports: !override
+      - "127.0.0.1:8001:8001"
+    restart: unless-stopped
+
+  postgres:
+    environment:
+      POSTGRES_PASSWORD: ${URUK_DB_PASSWORD:?set URUK_DB_PASSWORD in .env}
+    ports: !reset []
+    restart: unless-stopped
+
+  redis:
+    profiles: ["redis"]   # not started: the cache lives in Postgres
+
+  cloudflared:
+    image: cloudflare/cloudflared:2026.10.3
+    command: ["tunnel", "--no-autoupdate", "run"]
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:?set CLOUDFLARE_TUNNEL_TOKEN in .env}
+    depends_on:
+      app:
+        condition: service_healthy
+    restart: unless-stopped
+
+  backup:
+    image: postgres:18
+    environment:
+      PGHOST: postgres
+      PGUSER: uruk
+      PGDATABASE: uruk
+      PGPASSWORD: ${URUK_DB_PASSWORD:?set URUK_DB_PASSWORD in .env}
+      KEEP_DAYS: ${URUK_BACKUP_KEEP_DAYS:-14}
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        # After a reboot, restart policies start containers in any order: wait for
+        # Postgres (and the app's migrations) instead of trusting depends_on.
+        rm -f /backups/*.tmp
+        sleep 120
+        while true; do
+          until pg_isready -q; do sleep 5; done
+          file=/backups/uruk-$$(date +%Y-%m-%dT%H%M).dump
+          if pg_dump --format=custom --file="$$file.tmp" && mv "$$file.tmp" "$$file"; then
+            echo "backup: $$file"
+            find /backups -name 'uruk-*.dump' -mtime +"$$KEEP_DAYS" -delete
+            sleep 86400
+          else
+            rm -f "$$file.tmp"
+            echo "backup failed, retrying in 5 minutes"
+            sleep 300
+          fi
+        done
+    volumes:
+      - ./backups:/backups
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped

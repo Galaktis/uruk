@@ -1,0 +1,57 @@
+name: Bug report
+description: Something in Uruk does not work as documented.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. **Security issues must not be reported here** —
+        see [SECURITY.md](https://github.com/Galaktis/uruk/blob/main/SECURITY.md).
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The smallest sequence of commands, API or MCP calls that triggers the bug.
+      placeholder: |
+        1. docker compose up -d
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and output
+      description: Relevant log lines or tracebacks (for example `docker compose logs app`). Remove any secrets.
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: Uruk version or commit
+      placeholder: "0.1.0 or a commit SHA"
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where does it happen?
+      multiple: true
+      options:
+        - Public site rendering
+        - Studio
+        - REST API
+        - MCP server
+        - Admin
+        - Deployment / Docker
+        - Other
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: How you run Uruk (compose, prod overlay, bare metal), OS, Postgres version, Redis or Postgres cache.

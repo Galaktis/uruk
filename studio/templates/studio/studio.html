@@ -1,0 +1,46 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Uruk Studio</title>
+<script src="{% static 'studio/htmx.min.js' %}" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"></script>
+<link rel="stylesheet" href="{% static 'studio/studio.css' %}">
+</head>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+<header id="status" hx-get="{% url 'studio:status' %}" hx-trigger="content-changed from:body">
+{% include "studio/_status.html" %}
+</header>
+<main class="layout">
+  <nav class="panel pages" aria-label="Pages">
+    <h2>Pages</h2>
+    {% if page_tree %}
+    <ul>{% for node in page_tree %}{% include "studio/_page_node.html" %}{% endfor %}</ul>
+    {% else %}
+    <p class="hint">No pages yet — ask your agent to create one.</p>
+    {% endif %}
+  </nav>
+  <section class="panel tree" aria-label="Elements">
+    <h2>Elements{% if page %} — {{ page.name }}{% endif %}</h2>
+    <div id="tree"{% if tree %} hx-get="{% url 'studio:tree' tree.element.pk %}" hx-trigger="content-changed from:body"{% endif %}>
+      {% if tree %}{% include "studio/_tree.html" %}{% else %}<p class="hint">This page has no root element.</p>{% endif %}
+    </div>
+  </section>
+  <section class="panel editor" id="editor" aria-label="Editor">
+    <p class="hint">Select an element to edit it.</p>
+  </section>
+  <section class="panel preview" aria-label="Preview">
+    <h2>Draft preview {% if preview_url %}<a href="{{ preview_url }}" target="_blank" rel="noopener">open ↗</a>{% endif %}</h2>
+    {% if preview_url %}<iframe id="preview" src="{{ preview_url }}" title="Draft preview"></iframe>{% endif %}
+  </section>
+</main>
+<script>
+  // Every mutation fires "content-changed" (HX-Trigger): reload the draft preview with it.
+  document.body.addEventListener("content-changed", () => {
+    const frame = document.getElementById("preview");
+    if (frame) frame.contentWindow.location.reload();
+  });
+</script>
+</body>
+</html>

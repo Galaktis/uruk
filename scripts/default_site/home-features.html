@@ -1,0 +1,41 @@
+<section class="band reveal" id="features">
+  <div class="wrap">
+    <div class="band-head">
+      <p class="kicker">What the city provides</p>
+      <h2>One deployment, many sites</h2>
+      <p>A single Uruk serves any number of tenants. Each one is a walled district: its own schema, its own users, its own everything.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 21 8 12 13 3 8 Z"/><path d="M3 12.5 12 17.5 21 12.5" opacity="0.6"/><path d="M3 17 12 22 21 17" opacity="0.3"/></svg>
+        <h3>A schema per tenant</h3>
+        <p>The <code>Host</code> header picks the tenant; the connection's <code>search_path</code> does the isolation. Users, content, and tokens never share tables across sites.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="12" r="2.2"/><circle cx="19" cy="5" r="2.2"/><circle cx="19" cy="19" r="2.2"/><path d="M7 11 16.8 5.9 M7 13 16.8 18.1"/></svg>
+        <h3>Exact invalidation</h3>
+        <p>The hard problem, solved with a dependency graph: every render records what it read, so one edit evicts precisely the affected pages — nothing more, nothing stale.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6 8 10 4 14"/><path d="M10 15 H20"/><rect x="2" y="2" width="20" height="20" rx="3" opacity="0.4"/></svg>
+        <h3>Agents are editors</h3>
+        <p>The first admin client is an MCP server, not a dashboard. An agent authenticates as a tenant user and can do exactly what that user's permissions allow.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 7.5 V16.5 L12 21 4 16.5 V7.5 Z" opacity="0.5"/><path d="M12 11 V21 M12 11 20 7.5 M12 11 4 7.5"/></svg>
+        <h3>Sites that travel</h3>
+        <p>Every row has a UUIDv7 key, so a whole site exports as one JSON archive and restores anywhere without collisions. This very site ships as one.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5 V18.5 C4 20.2 7.6 21.5 12 21.5 S20 20.2 20 18.5 V5.5" opacity="0.6"/><path d="M4 12 C4 13.7 7.6 15 12 15 S20 13.7 20 12" opacity="0.4"/></svg>
+        <h3>Assets live in the DB</h3>
+        <p>The CSS styling this page is a row, served at a content-hashed URL with an immutable year-long cache. Even the fonts are rows. Few files, full speed.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="5" r="2.2" opacity="0.6"/><circle cx="7" cy="19" r="2.2" opacity="0.6"/><path d="M7 7.2 V16.8 M7 12 H14.5" opacity="0.6"/><circle cx="17" cy="12" r="2.2" opacity="0.6"/><path d="M20.5 3.5 3.5 20.5"/></svg>
+        <h3>No commit-to-create</h3>
+        <p>A new site is an API call, not a repository. The only committed code is the generic renderer library every tenant shares — everything else is rows.</p>
+      </article>
+    </div>
+  </div>
+</section>

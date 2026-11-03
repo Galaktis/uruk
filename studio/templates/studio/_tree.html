@@ -1,0 +1,5 @@
+{% if tree %}
+<ul class="tree-root">{% include "studio/_node.html" with node=tree %}</ul>
+{% else %}
+<p class="hint">This element no longer exists.</p>
+{% endif %}

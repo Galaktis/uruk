@@ -1,0 +1,5 @@
+<li>
+  <a href="{% url 'studio:page' node.page.pk %}"{% if node.page.pk == page.pk %} aria-current="page"{% endif %}>{{ node.page.name }}</a>
+  <small>/{{ node.page.slug }}</small>
+  {% if node.children %}<ul>{% for node in node.children %}{% include "studio/_page_node.html" %}{% endfor %}</ul>{% endif %}
+</li>

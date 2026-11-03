@@ -1,0 +1,26 @@
+<section class="band reveal" id="quickstart">
+  <div class="wrap">
+    <div class="quick">
+      <div>
+        <p class="kicker">Founding a city</p>
+        <h2>Running in one command</h2>
+        <p>
+          Docker is the only requirement. On first start the app container
+          migrates every schema and raises the default tenant — the site you are reading now —
+          next to a remote MCP endpoint. Then hand an agent a token, let it build, review the
+          draft in the Studio, and publish.
+        </p>
+        <a class="more-link" href="/quickstart">The full quickstart, including MCP setup</a>
+      </div>
+      <div class="term">
+        <div class="term-bar"><span>sh — from zero to served</span><button class="copy-btn" type="button" data-copy>copy</button></div>
+        <pre><code><span class="ps1">$ </span><span data-cmd>git clone https://github.com/Galaktis/uruk && cd uruk</span>
+<span class="ps1">$ </span><span data-cmd>docker compose up -d</span>
+<span class="out">app   migrating public + tenant schemas, seeding the default site…</span>
+<span class="out">app   Listening at: http://0.0.0.0:8000</span>
+<span class="out">mcp   Listening at: http://0.0.0.0:8001  (/mcp)</span>
+<span class="out"># any hostname you point at it now serves this site</span></code></pre>
+      </div>
+    </div>
+  </div>
+</section>

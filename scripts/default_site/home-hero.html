@@ -1,0 +1,71 @@
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow" data-rise="1">
+        <svg class="wedge" width="22" height="8" viewBox="0 0 22 8" fill="currentColor" aria-hidden="true">
+          <path d="M0 0 L8 4 L0 8 Z" opacity="0.9"/><path d="M9 0 L17 4 L9 8 Z" opacity="0.45"/><path d="M18 0 L22 2 22 6 18 8 Z" opacity="0.2"/>
+        </svg>
+        Uruk — a multi-tenant CMS
+      </p>
+      <h1 data-rise="2">A website is<br><span class="grad">data</span>, not code.</h1>
+      <p class="lede" data-rise="3">
+        Uruk composes entire sites from rows in Postgres — element trees rendered to HTML,
+        cached until the data changes, edited by people and AI agents over the same API.
+        No templates to commit. No build to run. No deploy to wait for.
+      </p>
+      <div class="hero-actions" data-rise="4">
+        <div class="term" style="flex:1 1 340px">
+          <div class="term-bar"><span>sh — get running</span><button class="copy-btn" type="button" data-copy>copy</button></div>
+          <pre><code><span class="ps1">$ </span><span data-cmd>git clone https://github.com/Galaktis/uruk && cd uruk</span>
+<span class="ps1">$ </span><span data-cmd>docker compose up</span>
+<span class="out"># http://localhost:8000 → this site, served from rows</span></code></pre>
+        </div>
+      </div>
+      <p data-rise="5" style="margin-top:22px"><a class="more-link" href="/manifesto">Why the first city of writing lends its name</a></p>
+    </div>
+
+    <figure class="ziggurat-fig" data-rise="3" aria-label="The Uruk stack drawn as a ziggurat: Postgres at the base, tenant schemas, element trees, pages, and served HTML at the summit">
+      <svg viewBox="0 0 520 432" role="img" aria-hidden="true">
+        <defs>
+          <radialGradient id="apexGlow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#46e0a8" stop-opacity="0.55"/>
+            <stop offset="1" stop-color="#46e0a8" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <ellipse class="apex-glow" cx="260" cy="70" rx="120" ry="54" fill="url(#apexGlow)"/>
+
+        <!-- summit: the served page -->
+        <rect x="228" y="52" width="64" height="38" rx="6" fill="#46e0a8" fill-opacity="0.16" stroke="#46e0a8" stroke-opacity="0.85"/>
+        <text x="260" y="76" text-anchor="middle" font-family="Martian Mono, monospace" font-size="11" letter-spacing="2" fill="#9ff0d3">HTML</text>
+
+        <!-- terraces, bottom of the city upward -->
+        <g>
+          <rect x="192" y="118" width="136" height="56" rx="6" fill="#46e0a8" fill-opacity="0.09" stroke="#46e0a8" stroke-opacity="0.5"/>
+          <text x="260" y="151" text-anchor="middle" font-family="Martian Mono, monospace" font-size="11" letter-spacing="2" fill="#8fe4c2">PAGES</text>
+        </g>
+        <g>
+          <rect x="130" y="190" width="260" height="56" rx="6" fill="#46c2b8" fill-opacity="0.09" stroke="#46c2b8" stroke-opacity="0.5"/>
+          <text x="260" y="223" text-anchor="middle" font-family="Martian Mono, monospace" font-size="11" letter-spacing="2" fill="#8adcd2">ELEMENT TREES</text>
+        </g>
+        <g>
+          <rect x="68" y="262" width="384" height="56" rx="6" fill="#46a0cc" fill-opacity="0.09" stroke="#46a0cc" stroke-opacity="0.5"/>
+          <text x="260" y="295" text-anchor="middle" font-family="Martian Mono, monospace" font-size="11" letter-spacing="2" fill="#8cc9e4">TENANT SCHEMAS</text>
+        </g>
+        <g>
+          <rect x="6" y="334" width="508" height="56" rx="6" fill="#3e7bd6" fill-opacity="0.1" stroke="#3e7bd6" stroke-opacity="0.55"/>
+          <text x="260" y="367" text-anchor="middle" font-family="Martian Mono, monospace" font-size="11" letter-spacing="2" fill="#94bdea">POSTGRES — ALL STATE</text>
+        </g>
+
+        <!-- clay wedges, the scribe's marks -->
+        <g fill="#c9a176" opacity="0.4">
+          <path d="M30 410 L44 416 L30 422 Z"/>
+          <path d="M50 410 L64 416 L50 422 Z" opacity="0.6"/>
+          <path d="M70 410 L84 416 L70 422 Z" opacity="0.3"/>
+        </g>
+        <text x="514" y="420" text-anchor="end" font-family="Martian Mono, monospace" font-size="9" letter-spacing="1.5" fill="#67806f">URUK · EST. 4000 BC</text>
+      </svg>
+      <figcaption>the stack is a ziggurat — state at the base, HTML at the summit</figcaption>
+    </figure>
+  </div>
+</section>

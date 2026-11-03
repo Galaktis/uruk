@@ -1,0 +1,51 @@
+<section class="band reveal" id="how">
+  <div class="wrap">
+    <div class="band-head">
+      <p class="kicker">From tablet to page</p>
+      <h2>Three moves, same as 3200&nbsp;BC</h2>
+      <p>A scribe pressed records into clay; a renderer presses rows into HTML. The pipeline is short enough to hold in your head.</p>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <span class="step-no">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="#c9a176" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z"/></svg>
+          01 · WRITE
+        </span>
+        <h3>Rows, not files</h3>
+        <p>Every block on this page is an <code>Element</code> row — a kind, JSON parameters, content, and a parent. Pages are rows too, arranged in a URL tree.</p>
+        <div class="code"><pre><code>{
+  <span class="k">"kind"</span>: <span class="s">"heading"</span>,
+  <span class="k">"content"</span>: <span class="s">"A website is data"</span>,
+  <span class="k">"parameters"</span>: { <span class="k">"level"</span>: <span class="j">1</span> },
+  <span class="k">"parent_id"</span>: <span class="s">"0198…root"</span>
+}</code></pre></div>
+      </article>
+      <article class="step">
+        <span class="step-no">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="#c9a176" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z"/></svg>
+          02 · RENDER
+        </span>
+        <h3>The tree becomes HTML</h3>
+        <p>A small library of committed renderers walks the element tree. Text is escaped by default; there are no per-site templates anywhere.</p>
+        <div class="code"><pre><code><span class="c"># the only committed "template"</span>
+<span class="k">@register</span>(<span class="s">"heading"</span>)
+<span class="k">def</span> <span class="j">heading</span>(el, children, ctx):
+    <span class="k">return</span> format_html(
+        <span class="s">"&lt;h{0}&gt;{1}&lt;/h{0}&gt;"</span>,
+        el.parameters[<span class="s">"level"</span>], el.content)</code></pre></div>
+      </article>
+      <article class="step">
+        <span class="step-no">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="#c9a176" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z"/></svg>
+          03 · CACHE
+        </span>
+        <h3>Cached until a row changes</h3>
+        <p>Each render records which elements it touched. Saving one element evicts exactly the pages that used it — a shared header invalidates everywhere at once.</p>
+        <div class="code"><pre><code>element.save()
+<span class="c">└─ PageDependency reverse index</span>
+<span class="c">   └─ evict: /  /manifesto  …</span>
+<span class="j">✓</span> next request re-renders once</code></pre></div>
+      </article>
+    </div>
+  </div>
+</section>
