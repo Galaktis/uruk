@@ -35,7 +35,7 @@ class DefaultTenantFallbackMiddleware(TenantMainMiddleware):
         """
         tenant = get_or_create_default_tenant()
         tenant.domain_url = hostname
-        request.tenant = tenant  # ty: ignore[unresolved-attribute] - django-tenants' request attribute
+        request.tenant = tenant  # ty: ignore[missing-attribute] - django-tenants' request attribute
         tenant_connection().set_tenant(tenant)
         self.setup_url_routing(request)
         return None

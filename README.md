@@ -50,7 +50,7 @@ docker compose up -d          # site on :8000, remote MCP on :8001/mcp (+ Postgr
 
 Compose pulls the published image, [`galaktis/uruk`](https://hub.docker.com/r/galaktis/uruk)
 (also `ghcr.io/galaktis/uruk`, for amd64 and arm64). Pin a release with
-`URUK_VERSION=0.1.0`, or run your checkout's code with `docker compose up -d --build`.
+`URUK_VERSION=0.1.1`, or run your checkout's code with `docker compose up -d --build`.
 You don't even need the clone: `docker-compose.yml` on its own is enough.
 
 The first start migrates the database and seeds a complete default website. Claim its
