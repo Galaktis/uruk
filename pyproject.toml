@@ -1,6 +1,6 @@
 [project]
 name = "uruk"
-version = "0.1.0"
+version = "0.1.1"
 description = "Uruk — a multi-tenant CMS where a website is data, not code"
 authors = [{ name = "Jerome Millet" }]
 maintainers = [{ name = "Galaktis" }]

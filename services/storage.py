@@ -62,7 +62,7 @@ class BotoStorageBackend(StorageBackend):
 
     def __init__(self, bucket: str, *, prefix: str = "", endpoint_url: str = "", region: str = "") -> None:
         """Create the backend for ``bucket``; boto3 is imported only here."""
-        import boto3  # noqa: PLC0415 - lazy: boto3 is only a dependency when this backend is selected  # ty: ignore[unresolved-import]
+        import boto3  # noqa: PLC0415 - lazy: boto3 is only a dependency when this backend is selected  # ty: ignore[import-not-found]
 
         self.bucket = bucket
         self.prefix = prefix

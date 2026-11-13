@@ -56,7 +56,12 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
+          # Always start from the latest python:3.15-slim, which carries Debian's fixes.
+          pull: true
           push: true
+          # Supply-chain attestations, shown by Docker Hub and Docker Scout.
+          provenance: mode=max
+          sbom: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: VERSION=${{ steps.meta.outputs.version }}

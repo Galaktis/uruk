@@ -5,6 +5,15 @@
 # Postgres is the only required backing service; see docker-compose.yml.
 FROM python:3.15-slim
 
+# Pick up Debian security fixes newer than the base image, and drop the system pip (uv
+# manages the venv): its vendored copies of urllib3, msgpack and pkg_resources would
+# otherwise ship, unused and unpatched, in every image.
+RUN apt-get update \
+    && apt-get upgrade -y --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/* \
+    && python -m pip uninstall -y pip \
+    && rm -rf /usr/local/lib/python3.*/ensurepip/_bundled
+
 COPY --from=ghcr.io/astral-sh/uv:0.13 /uv /uvx /bin/
 
 # Set by the release workflow from the git tag; "dev" for local builds.
