@@ -1,5 +1,5 @@
-# `docker compose up` runs a complete Uruk: the app (built from this checkout,
-# self-provisioning on start) on http://localhost:8000, the remote MCP endpoint on
+# `docker compose up` runs a complete Uruk: the app (the published galaktis/uruk image,
+# or this checkout with `--build`; self-provisioning on start) on http://localhost:8000, the remote MCP endpoint on
 # http://localhost:8001/mcp, plus Postgres and Redis. For
 # local development start only the backing services — `just up`, i.e.
 # `docker compose up -d postgres redis` — and run the app with `uv run`. The block
@@ -29,6 +29,8 @@
 
 services:
   app:
+    # The published image; `--build` builds this checkout instead (development, CI).
+    image: galaktis/uruk:${URUK_VERSION:-latest}
     build: .
     depends_on:
       postgres:
@@ -51,6 +53,7 @@ services:
   mcp:
     # Remote MCP endpoint for hosted agents: POST http://localhost:8001/mcp with
     # `Authorization: Bearer <uruk_ token>` (tokens: `manage.py create_api_token`).
+    image: galaktis/uruk:${URUK_VERSION:-latest}
     build: .
     command: ["mcp"]
     depends_on:

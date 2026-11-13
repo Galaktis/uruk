@@ -77,7 +77,8 @@ Pushing a `vX.Y.Z` tag runs `.github/workflows/release.yml`: the full CI gate (r
 (`galaktis/uruk`) and `ghcr.io/galaktis/uruk` as `X.Y.Z`, `X.Y` and `latest`. It only runs
 in the `Galaktis/uruk` repository. Bump `version` in `pyproject.toml` before tagging. The
 image runs as the unprivileged uid 10001 with a read-only `/app` (only `staticfiles/` is
-writable). Compose builds the image from the checkout.
+writable). Compose services carry both `image:` and `build:`: `up` pulls
+the release, `up --build` builds the checkout.
 
 ## Configuration
 
