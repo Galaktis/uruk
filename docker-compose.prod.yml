@@ -51,7 +51,7 @@ services:
     profiles: ["redis"]   # not started: the cache lives in Postgres
 
   cloudflared:
-    image: cloudflare/cloudflared:2026.10.3
+    image: cloudflare/cloudflared:2026.11.2
     command: ["tunnel", "--no-autoupdate", "run"]
     environment:
       TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:?set CLOUDFLARE_TUNNEL_TOKEN in .env}

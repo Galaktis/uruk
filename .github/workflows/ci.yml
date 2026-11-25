@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.3
+      - uses: astral-sh/setup-uv@v10.4.0
       - run: uv sync --frozen
       - run: uv run ruff format --check .
       - run: uv run ruff check --output-format github .
@@ -45,7 +45,7 @@ jobs:
       URUK_SECRET_KEY: ci-only-secret-key-0123456789abcdef
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.3
+      - uses: astral-sh/setup-uv@v10.4.0
       - run: uv sync --frozen
       - run: uv run coverage run -m pytest
       # Fails the job below `fail_under` (pyproject.toml).
