@@ -170,7 +170,9 @@ docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
 
 It binds the website and MCP to `127.0.0.1`, keeps Postgres off the network, drops Redis,
 restarts on reboot, starts a blank site (`URUK_DEFAULT_SITE=blank`), and dumps the database
-nightly to `./backups` (copy that off the machine). In the Cloudflare dashboard, create a
+nightly to `./backups` (copy that off the machine; the dumps belong to
+`URUK_BACKUP_UID:URUK_BACKUP_GID`, 1000:1000 by default, so a sync client running as that
+user can upload them). In the Cloudflare dashboard, create a
 tunnel, put its token in `.env`, and route your public hostname to `http://app:8000`. Reach
 the MCP endpoint over SSH: `ssh -L 8001:127.0.0.1:8001 <server>`.
 

@@ -62,6 +62,9 @@ services:
 
   backup:
     image: postgres:18
+    # Write the dumps as the host user who owns ./backups, not root: a sync client
+    # running as that user can then read and upload them.
+    user: "${URUK_BACKUP_UID:-1000}:${URUK_BACKUP_GID:-1000}"
     environment:
       PGHOST: postgres
       PGUSER: uruk
